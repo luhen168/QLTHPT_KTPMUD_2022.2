@@ -65,9 +65,9 @@ namespace QLTHPT_KTPMUD_2022._2
             this.labelUserName.AutoSize = true;
             this.labelUserName.BackColor = System.Drawing.Color.Transparent;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(370, 186);
+            this.labelUserName.Location = new System.Drawing.Point(296, 191);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(64, 13);
+            this.labelUserName.Size = new System.Drawing.Size(55, 13);
             this.labelUserName.TabIndex = 2;
             this.labelUserName.Text = "Tài khoản";
             this.labelUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,7 +80,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPass.Location = new System.Drawing.Point(370, 226);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(60, 13);
+            this.labelPass.Size = new System.Drawing.Size(52, 13);
             this.labelPass.TabIndex = 3;
             this.labelPass.Text = "Mật khẩu";
             this.labelPass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
