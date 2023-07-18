@@ -63,6 +63,16 @@ namespace QLTHPT_KTPMUD_2022._2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_inside {
+            get {
+                object obj = ResourceManager.GetObject("background_inside", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_school {
             get {
                 object obj = ResourceManager.GetObject("background_school", resourceCulture);
