@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle tBEmailOriginalRect;
         private Rectangle tBStartDateOriginalRect;
         private Rectangle tBEndDateOriginalRect;
+        private Rectangle tBFindOriginalRect;
         private Rectangle btnAddGVOriginalRect;
         private Rectangle btnFixGVOriginalRect;
         private Rectangle btnFindGVOriginalRect;
@@ -43,19 +46,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle label10OriginalRect;
         private Rectangle label11OriginalRect;
         private Rectangle label12OriginalRect;
-        private Rectangle checkBox1OriginalRect;
-        private Rectangle checkBox2OriginalRect;
-        private Rectangle checkBox3OriginalRect;
-        private Rectangle checkBox4OriginalRect;
-        private Rectangle checkBox5OriginalRect;
-        private Rectangle checkBox6OriginalRect;
-        private Rectangle checkBox7OriginalRect;
-        private Rectangle checkBox8OriginalRect;
-        private Rectangle checkBox9OriginalRect;
-        private Rectangle checkBox10OriginalRect;
-        private Rectangle checkBox11OriginalRect;
-        private Rectangle checkBox12OriginalRect;
-
+        private DataTable dataTable = new DataTable();
         private Rectangle dgvGVOriginalRect;
         private Size QLGVOriginalSize;
      
@@ -79,6 +70,7 @@ namespace QLTHPT_KTPMUD_2022._2
             tBEmailOriginalRect = new Rectangle(tBEmail.Location.X, tBEmail.Location.Y, tBEmail.Width, tBEmail.Height);
             tBStartDateOriginalRect = new Rectangle(tBStartDate.Location.X, tBStartDate.Location.Y, tBStartDate.Width, tBStartDate.Height);
             tBEndDateOriginalRect = new Rectangle(tBEndDate.Location.X, tBEndDate.Location.Y, tBEndDate.Width, tBEndDate.Height);
+            tBFindOriginalRect = new Rectangle(tBFind.Location.X, tBFind.Location.Y, tBFind.Width, tBFind.Height);
             cBMHOriginalRect = new Rectangle(cBMH.Location.X, cBMH.Location.Y, cBMH.Width, cBMH.Height);
             cBSexOriginalRect = new Rectangle(cBSex.Location.X, cBSex.Location.Y, cBSex.Width, cBSex.Height);
             label1OriginalRect = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
@@ -93,26 +85,20 @@ namespace QLTHPT_KTPMUD_2022._2
             label10OriginalRect = new Rectangle(label10.Location.X, label10.Location.Y, label10.Width, label10.Height);
             label11OriginalRect = new Rectangle(label11.Location.X, label11.Location.Y, label11.Width, label11.Height);
             label12OriginalRect = new Rectangle(label12.Location.X, label12.Location.Y, label12.Width, label12.Height);
-            checkBox1OriginalRect =  new Rectangle(checkBox1.Location.X, checkBox1.Location.Y, checkBox1.Width, checkBox1.Height);
-            checkBox2OriginalRect =  new Rectangle(checkBox2.Location.X, checkBox2.Location.Y, checkBox2.Width, checkBox2.Height);
-            checkBox3OriginalRect = new Rectangle(checkBox3.Location.X, checkBox3.Location.Y, checkBox3.Width, checkBox3.Height);
-            checkBox4OriginalRect = new Rectangle(checkBox4.Location.X, checkBox4.Location.Y, checkBox4.Width, checkBox4.Height);
-            checkBox5OriginalRect = new Rectangle(checkBox5.Location.X, checkBox5.Location.Y, checkBox5.Width, checkBox5.Height);
-            checkBox6OriginalRect = new Rectangle(checkBox6.Location.X, checkBox6.Location.Y, checkBox6.Width, checkBox6.Height);
-            checkBox7OriginalRect = new Rectangle(checkBox7.Location.X, checkBox7.Location.Y, checkBox7.Width, checkBox7.Height);
-            checkBox8OriginalRect = new Rectangle(checkBox8.Location.X, checkBox8.Location.Y, checkBox8.Width, checkBox8.Height);
-            checkBox9OriginalRect = new Rectangle(checkBox9.Location.X, checkBox9.Location.Y, checkBox9.Width, checkBox9.Height);
-            checkBox10OriginalRect = new Rectangle(checkBox10.Location.X, checkBox10.Location.Y, checkBox10.Width, checkBox10.Height);
-            checkBox11OriginalRect = new Rectangle(checkBox11.Location.X, checkBox11.Location.Y, checkBox11.Width, checkBox11.Height);
-            checkBox12OriginalRect = new Rectangle(checkBox12.Location.X, checkBox12.Location.Y, checkBox12.Width, checkBox12.Height);
             btnAddGVOriginalRect = new Rectangle(btnAddGV.Location.X, btnAddGV.Location.Y, btnAddGV.Width, btnAddGV.Height);
             btnFixGVOriginalRect = new Rectangle(btnFixGV.Location.X, btnFixGV.Location.Y, btnFixGV.Width, btnFixGV.Height);
             btnFindGVOriginalRect = new Rectangle(btnFindGV.Location.X, btnFindGV.Location.Y, btnFindGV.Width, btnFindGV.Height);
             btnDelGVOriginalRect = new Rectangle(btnDelGV.Location.X, btnDelGV.Location.Y, btnDelGV.Width, btnDelGV.Height);
 
             dgvGVOriginalRect = new Rectangle(dgvGV.Location.X, dgvGV.Location.Y, dgvGV.Width, dgvGV.Height);
-            DataSet dsGV = GetGV();
-            dgvGV.DataSource = dsGV.Tables[0];
+            
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT dbo.ND.*, dbo.NDGV.MaGV, dbo.NDGV.NgayBD, dbo.NDGV.NgayKT, dbo.NDGV.BoMon FROM dbo.NDGV JOIN dbo.ND ON dbo.NDGV.MaID = dbo.ND.MaID"; ;
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dataTable);
+            }
+            dgvGV.DataSource = dataTable;
         }
 
         //Hàm thay đổi kích thước các control cho phù hợp với kích thước form 
@@ -130,6 +116,7 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(tBEmailOriginalRect, tBEmail);
             resizeControl(tBStartDateOriginalRect, tBStartDate);
             resizeControl(tBEndDateOriginalRect, tBEndDate);
+            resizeControl(tBFindOriginalRect, tBFind);
             resizeControl(btnAddGVOriginalRect, btnAddGV);
             resizeControl(btnFixGVOriginalRect, btnFixGV);
             resizeControl(btnDelGVOriginalRect, btnDelGV);
@@ -146,18 +133,6 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(label10OriginalRect, label10);
             resizeControl(label11OriginalRect, label11);
             resizeControl(label12OriginalRect, label12);
-            resizeControl(checkBox1OriginalRect, checkBox1);
-            resizeControl(checkBox2OriginalRect, checkBox2);
-            resizeControl(checkBox3OriginalRect, checkBox3);
-            resizeControl(checkBox4OriginalRect, checkBox4);
-            resizeControl(checkBox5OriginalRect, checkBox5);
-            resizeControl(checkBox6OriginalRect, checkBox6);
-            resizeControl(checkBox7OriginalRect, checkBox7);
-            resizeControl(checkBox8OriginalRect, checkBox8);
-            resizeControl(checkBox9OriginalRect, checkBox9);
-            resizeControl(checkBox10OriginalRect, checkBox10);
-            resizeControl(checkBox11OriginalRect, checkBox11);
-            resizeControl(checkBox12OriginalRect, checkBox12);
             resizeControl(dgvGVOriginalRect, dgvGV);
         }
 
@@ -287,6 +262,15 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnFindGV_Click(object sender, EventArgs e)
+        {
+            string search = tBFind.Text;
+            DataView dv = new DataView(dataTable);
+            dv.RowFilter = $"HoVaTen like '%{search}%' or CCCD like '%{search}%' or MaGV like '%{search}%' or MaID like '%{search}%' or BoMon like '%{search}%' or DiaChi like '%{search}%'  or SDT like '%{search}%' or GioiTinh like '%{search}%'";
+            dgvGV.DataSource = dv;
 
         }
     }
