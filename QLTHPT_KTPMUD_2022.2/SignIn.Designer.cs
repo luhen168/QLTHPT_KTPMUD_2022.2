@@ -6,7 +6,7 @@ namespace QLTHPT_KTPMUD_2022._2
     {
         MainPage mainpage; //Tạo 1 đối tượng và 1 
         //Tao 1 chuoi ket noi SQL server
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
+        string strConnection = "Data Source=DESKTOP-2D0LUGD;Initial Catalog=qlthpt;Integrated Security=True";
         SqlConnection conn;
         SqlCommand cmd;
         /// <summary>
@@ -67,11 +67,11 @@ namespace QLTHPT_KTPMUD_2022._2
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
-            this.labelUserName.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(296, 191);
+            this.labelUserName.BackColor = System.Drawing.Color.Silver;
+            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(289, 191);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(64, 13);
+            this.labelUserName.Size = new System.Drawing.Size(55, 13);
             this.labelUserName.TabIndex = 2;
             this.labelUserName.Text = "Tài khoản";
             this.labelUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,11 +80,11 @@ namespace QLTHPT_KTPMUD_2022._2
             // labelPass
             // 
             this.labelPass.AutoSize = true;
-            this.labelPass.BackColor = System.Drawing.Color.Transparent;
-            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPass.Location = new System.Drawing.Point(296, 237);
+            this.labelPass.BackColor = System.Drawing.Color.Silver;
+            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.Location = new System.Drawing.Point(289, 240);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(60, 13);
+            this.labelPass.Size = new System.Drawing.Size(52, 13);
             this.labelPass.TabIndex = 3;
             this.labelPass.Text = "Mật khẩu";
             this.labelPass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

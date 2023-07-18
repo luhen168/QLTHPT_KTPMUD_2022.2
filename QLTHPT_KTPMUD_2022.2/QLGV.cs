@@ -24,11 +24,13 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle tBdateGVOriginalRect;
         private Rectangle tBPhoneOriginalRect;
         private Rectangle tBAddressOriginalRect;
+        private Rectangle tBEmailOriginalRect;
+        private Rectangle tBStartDateOriginalRect;
+        private Rectangle tBEndDateOriginalRect;
         private Rectangle btnAddGVOriginalRect;
         private Rectangle btnFixGVOriginalRect;
         private Rectangle btnFindGVOriginalRect;
         private Rectangle btnDelGVOriginalRect;
-        private Rectangle button5OriginalRect;
         private Rectangle label1OriginalRect;
         private Rectangle label2OriginalRect;
         private Rectangle label3OriginalRect;
@@ -38,6 +40,9 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle label7OriginalRect;
         private Rectangle label8OriginalRect;
         private Rectangle label9OriginalRect;
+        private Rectangle label10OriginalRect;
+        private Rectangle label11OriginalRect;
+        private Rectangle label12OriginalRect;
         private Rectangle checkBox1OriginalRect;
         private Rectangle checkBox2OriginalRect;
         private Rectangle checkBox3OriginalRect;
@@ -47,6 +52,10 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle checkBox7OriginalRect;
         private Rectangle checkBox8OriginalRect;
         private Rectangle checkBox9OriginalRect;
+        private Rectangle checkBox10OriginalRect;
+        private Rectangle checkBox11OriginalRect;
+        private Rectangle checkBox12OriginalRect;
+
         private Rectangle dgvGVOriginalRect;
 
         private Size QLGVOriginalSize;
@@ -66,6 +75,9 @@ namespace QLTHPT_KTPMUD_2022._2
             tBPhoneOriginalRect = new Rectangle(tBPhone.Location.X, tBPhone.Location.Y, tBPhone.Width, tBPhone.Height);
             tBCCCDOriginalRect = new Rectangle(tBCCCD.Location.X, tBCCCD.Location.Y, tBCCCD.Width, tBCCCD.Height);
             tBdateGVOriginalRect = new Rectangle(tBdateGV.Location.X, tBdateGV.Location.Y, tBdateGV.Width, tBdateGV.Height);
+            tBEmailOriginalRect = new Rectangle(tBEmail.Location.X, tBEmail.Location.Y, tBEmail.Width, tBEmail.Height);
+            tBStartDateOriginalRect = new Rectangle(tBStartDate.Location.X, tBStartDate.Location.Y, tBStartDate.Width, tBStartDate.Height);
+            tBEndDateOriginalRect = new Rectangle(tBEndDate.Location.X, tBEndDate.Location.Y, tBEndDate.Width, tBEndDate.Height);
             cBMHOriginalRect = new Rectangle(cBMH.Location.X, cBMH.Location.Y, cBMH.Width, cBMH.Height);
             cBSexOriginalRect = new Rectangle(cBSex.Location.X, cBSex.Location.Y, cBSex.Width, cBSex.Height);
             label1OriginalRect = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
@@ -77,6 +89,9 @@ namespace QLTHPT_KTPMUD_2022._2
             label7OriginalRect = new Rectangle(label7.Location.X, label7.Location.Y, label7.Width, label7.Height);
             label8OriginalRect = new Rectangle(label8.Location.X, label8.Location.Y, label8.Width, label8.Height);
             label9OriginalRect = new Rectangle(label9.Location.X, label9.Location.Y, label9.Width, label9.Height);
+            label10OriginalRect = new Rectangle(label10.Location.X, label10.Location.Y, label10.Width, label10.Height);
+            label11OriginalRect = new Rectangle(label11.Location.X, label11.Location.Y, label11.Width, label11.Height);
+            label12OriginalRect = new Rectangle(label12.Location.X, label12.Location.Y, label12.Width, label12.Height);
             checkBox1OriginalRect =  new Rectangle(checkBox1.Location.X, checkBox1.Location.Y, checkBox1.Width, checkBox1.Height);
             checkBox2OriginalRect =  new Rectangle(checkBox2.Location.X, checkBox2.Location.Y, checkBox2.Width, checkBox2.Height);
             checkBox3OriginalRect = new Rectangle(checkBox3.Location.X, checkBox3.Location.Y, checkBox3.Width, checkBox3.Height);
@@ -86,6 +101,9 @@ namespace QLTHPT_KTPMUD_2022._2
             checkBox7OriginalRect = new Rectangle(checkBox7.Location.X, checkBox7.Location.Y, checkBox7.Width, checkBox7.Height);
             checkBox8OriginalRect = new Rectangle(checkBox8.Location.X, checkBox8.Location.Y, checkBox8.Width, checkBox8.Height);
             checkBox9OriginalRect = new Rectangle(checkBox9.Location.X, checkBox9.Location.Y, checkBox9.Width, checkBox9.Height);
+            checkBox10OriginalRect = new Rectangle(checkBox10.Location.X, checkBox10.Location.Y, checkBox10.Width, checkBox10.Height);
+            checkBox11OriginalRect = new Rectangle(checkBox11.Location.X, checkBox11.Location.Y, checkBox11.Width, checkBox11.Height);
+            checkBox12OriginalRect = new Rectangle(checkBox12.Location.X, checkBox12.Location.Y, checkBox12.Width, checkBox12.Height);
             btnAddGVOriginalRect = new Rectangle(btnAddGV.Location.X, btnAddGV.Location.Y, btnAddGV.Width, btnAddGV.Height);
             btnFixGVOriginalRect = new Rectangle(btnFixGV.Location.X, btnFixGV.Location.Y, btnFixGV.Width, btnFixGV.Height);
             btnFindGVOriginalRect = new Rectangle(btnFindGV.Location.X, btnFindGV.Location.Y, btnFindGV.Width, btnFindGV.Height);
@@ -108,6 +126,9 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(tBPhoneOriginalRect, tBPhone);
             resizeControl(tBdateGVOriginalRect, tBdateGV);
             resizeControl(tBCCCDOriginalRect, tBCCCD);
+            resizeControl(tBEmailOriginalRect, tBEmail);
+            resizeControl(tBStartDateOriginalRect, tBStartDate);
+            resizeControl(tBEndDateOriginalRect, tBEndDate);
             resizeControl(btnAddGVOriginalRect, btnAddGV);
             resizeControl(btnFixGVOriginalRect, btnFixGV);
             resizeControl(btnDelGVOriginalRect, btnDelGV);
@@ -121,6 +142,9 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(label7OriginalRect, label7);
             resizeControl(label8OriginalRect, label8);
             resizeControl(label9OriginalRect, label9);
+            resizeControl(label10OriginalRect, label10);
+            resizeControl(label11OriginalRect, label11);
+            resizeControl(label12OriginalRect, label12);
             resizeControl(checkBox1OriginalRect, checkBox1);
             resizeControl(checkBox2OriginalRect, checkBox2);
             resizeControl(checkBox3OriginalRect, checkBox3);
@@ -130,6 +154,9 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(checkBox7OriginalRect, checkBox7);
             resizeControl(checkBox8OriginalRect, checkBox8);
             resizeControl(checkBox9OriginalRect, checkBox9);
+            resizeControl(checkBox10OriginalRect, checkBox10);
+            resizeControl(checkBox11OriginalRect, checkBox11);
+            resizeControl(checkBox12OriginalRect, checkBox12);
             resizeControl(dgvGVOriginalRect, dgvGV);
         }
 
@@ -243,6 +270,21 @@ namespace QLTHPT_KTPMUD_2022._2
         }
 
         private void btnAddGV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

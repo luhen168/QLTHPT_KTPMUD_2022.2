@@ -11,7 +11,7 @@ namespace QLTHPT_KTPMUD_2022._2
         //QLMH qlmh;
         //QLKQHT qlkqht;
         //QLTK qltk;
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
+        string strConnection = "Data Source=DESKTOP-2D0LUGD;Initial Catalog=qlthpt;Integrated Security=True";
         SqlConnection conn;
         SqlCommand cmd;
         signIn signin;

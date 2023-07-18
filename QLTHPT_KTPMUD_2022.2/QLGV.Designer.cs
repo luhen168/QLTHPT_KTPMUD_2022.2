@@ -6,7 +6,7 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     partial class QLGV
     {        
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
+        string strConnection = "Data Source=DESKTOP-2D0LUGD;Initial Catalog=qlthpt;Integrated Security=True";
         SqlConnection conn;
         DataSet GetGV()
         {
@@ -81,6 +81,15 @@ namespace QLTHPT_KTPMUD_2022._2
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.tBStartDate = new System.Windows.Forms.TextBox();
+            this.tBEmail = new System.Windows.Forms.TextBox();
+            this.tBEndDate = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,21 +196,21 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBPhone
             // 
-            this.tBPhone.Location = new System.Drawing.Point(435, 122);
+            this.tBPhone.Location = new System.Drawing.Point(463, 122);
             this.tBPhone.Name = "tBPhone";
             this.tBPhone.Size = new System.Drawing.Size(155, 20);
             this.tBPhone.TabIndex = 14;
             // 
             // tBAddress
             // 
-            this.tBAddress.Location = new System.Drawing.Point(435, 148);
+            this.tBAddress.Location = new System.Drawing.Point(463, 148);
             this.tBAddress.Name = "tBAddress";
             this.tBAddress.Size = new System.Drawing.Size(155, 20);
             this.tBAddress.TabIndex = 15;
             // 
             // tBCCCD
             // 
-            this.tBCCCD.Location = new System.Drawing.Point(435, 71);
+            this.tBCCCD.Location = new System.Drawing.Point(463, 71);
             this.tBCCCD.Name = "tBCCCD";
             this.tBCCCD.Size = new System.Drawing.Size(155, 20);
             this.tBCCCD.TabIndex = 16;
@@ -259,7 +268,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.tBdateGV.CustomFormat = "dd/MM/yyyy";
             this.tBdateGV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tBdateGV.Location = new System.Drawing.Point(435, 96);
+            this.tBdateGV.Location = new System.Drawing.Point(463, 96);
             this.tBdateGV.Name = "tBdateGV";
             this.tBdateGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBdateGV.Size = new System.Drawing.Size(155, 20);
@@ -366,16 +375,16 @@ namespace QLTHPT_KTPMUD_2022._2
             // dgvGV
             // 
             this.dgvGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGV.Location = new System.Drawing.Point(23, 207);
+            this.dgvGV.Location = new System.Drawing.Point(23, 239);
             this.dgvGV.Name = "dgvGV";
-            this.dgvGV.Size = new System.Drawing.Size(748, 239);
+            this.dgvGV.Size = new System.Drawing.Size(748, 207);
             this.dgvGV.TabIndex = 29;
             this.dgvGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(596, 150);
+            this.checkBox6.Location = new System.Drawing.Point(624, 150);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(80, 17);
             this.checkBox6.TabIndex = 34;
@@ -385,7 +394,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(596, 99);
+            this.checkBox8.Location = new System.Drawing.Point(624, 99);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(80, 17);
             this.checkBox8.TabIndex = 32;
@@ -395,7 +404,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(596, 125);
+            this.checkBox9.Location = new System.Drawing.Point(624, 125);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(80, 17);
             this.checkBox9.TabIndex = 31;
@@ -405,19 +414,109 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(596, 73);
+            this.checkBox7.Location = new System.Drawing.Point(624, 73);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(71, 17);
             this.checkBox7.TabIndex = 30;
             this.checkBox7.Text = "Tìm kiếm ";
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
+            // tBStartDate
+            // 
+            this.tBStartDate.Location = new System.Drawing.Point(463, 175);
+            this.tBStartDate.Name = "tBStartDate";
+            this.tBStartDate.Size = new System.Drawing.Size(155, 20);
+            this.tBStartDate.TabIndex = 35;
+            // 
+            // tBEmail
+            // 
+            this.tBEmail.Location = new System.Drawing.Point(84, 202);
+            this.tBEmail.Name = "tBEmail";
+            this.tBEmail.Size = new System.Drawing.Size(155, 20);
+            this.tBEmail.TabIndex = 36;
+            // 
+            // tBEndDate
+            // 
+            this.tBEndDate.Location = new System.Drawing.Point(463, 202);
+            this.tBEndDate.Name = "tBEndDate";
+            this.tBEndDate.Size = new System.Drawing.Size(155, 20);
+            this.tBEndDate.TabIndex = 37;
+            this.tBEndDate.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(377, 178);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Ngày bắt đầu ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(377, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Ngày kết thúc";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 205);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Email";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(245, 204);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(86, 17);
+            this.checkBox10.TabIndex = 41;
+            this.checkBox10.Text = "checkBox10";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(624, 204);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(86, 17);
+            this.checkBox11.TabIndex = 42;
+            this.checkBox11.Text = "checkBox11";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(624, 177);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(86, 17);
+            this.checkBox12.TabIndex = 43;
+            this.checkBox12.Text = "checkBox12";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
             // QLGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(793, 450);
+            this.Controls.Add(this.checkBox12);
+            this.Controls.Add(this.checkBox11);
+            this.Controls.Add(this.checkBox10);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tBEndDate);
+            this.Controls.Add(this.tBEmail);
+            this.Controls.Add(this.tBStartDate);
             this.Controls.Add(this.checkBox6);
             this.Controls.Add(this.checkBox8);
             this.Controls.Add(this.checkBox9);
@@ -495,5 +594,14 @@ namespace QLTHPT_KTPMUD_2022._2
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.TextBox tBEmail;
+        private System.Windows.Forms.TextBox tBEndDate;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.TextBox tBStartDate;
     }
 }
