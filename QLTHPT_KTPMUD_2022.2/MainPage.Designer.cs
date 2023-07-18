@@ -11,9 +11,7 @@ namespace QLTHPT_KTPMUD_2022._2
         //QLMH qlmh;
         //QLKQHT qlkqht;
         //QLTK qltk;
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
-        SqlConnection conn;
-        SqlCommand cmd;
+        string connectionString = DatabaseConnection.Instance.ConnectionString;
         signIn signin;
         /// <summary>
         /// Required designer variable.

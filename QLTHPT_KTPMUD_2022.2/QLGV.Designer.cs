@@ -5,14 +5,14 @@ using System.Data.SqlClient;
 namespace QLTHPT_KTPMUD_2022._2
 {
     partial class QLGV
-    {        
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
+    {
+        string connectionString = DatabaseConnection.Instance.ConnectionString;
         SqlConnection conn;
         DataSet GetGV()
         {
             DataSet dsGV = new DataSet();
             string query = "SELECT dbo.NDGV.*,  dbo.ND.* FROM  dbo.NDGV JOIN  dbo.ND ON  dbo.NDGV.MaID =  dbo.ND.MaID";
-            using (conn = new SqlConnection(strConnection)) //Tao 1 ket noi toi SQL server
+            using (conn = new SqlConnection(connectionString)) //Tao 1 ket noi toi SQL server
             { 
                 conn.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query,conn);
@@ -86,7 +86,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBName
             // 
-            this.tBName.Location = new System.Drawing.Point(84, 71);
+            this.tBName.Location = new System.Drawing.Point(89, 53);
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(155, 20);
             this.tBName.TabIndex = 0;
@@ -94,7 +94,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBID
             // 
-            this.tBID.Location = new System.Drawing.Point(84, 96);
+            this.tBID.Location = new System.Drawing.Point(89, 78);
             this.tBID.Name = "tBID";
             this.tBID.Size = new System.Drawing.Size(155, 20);
             this.tBID.TabIndex = 1;
@@ -102,7 +102,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBmaGV
             // 
-            this.tBmaGV.Location = new System.Drawing.Point(84, 122);
+            this.tBmaGV.Location = new System.Drawing.Point(89, 104);
             this.tBmaGV.Name = "tBmaGV";
             this.tBmaGV.Size = new System.Drawing.Size(155, 20);
             this.tBmaGV.TabIndex = 3;
@@ -111,7 +111,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 74);
+            this.label1.Location = new System.Drawing.Point(25, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 5;
@@ -121,7 +121,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 100);
+            this.label2.Location = new System.Drawing.Point(25, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 6;
@@ -130,7 +130,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 125);
+            this.label3.Location = new System.Drawing.Point(25, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 7;
@@ -139,7 +139,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 151);
+            this.label4.Location = new System.Drawing.Point(25, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -148,7 +148,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(377, 73);
+            this.label5.Location = new System.Drawing.Point(382, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 9;
@@ -158,7 +158,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(377, 100);
+            this.label6.Location = new System.Drawing.Point(382, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 10;
@@ -168,7 +168,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(377, 125);
+            this.label7.Location = new System.Drawing.Point(382, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 11;
@@ -178,7 +178,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(377, 151);
+            this.label8.Location = new System.Drawing.Point(382, 133);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 12;
@@ -187,21 +187,21 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBPhone
             // 
-            this.tBPhone.Location = new System.Drawing.Point(435, 122);
+            this.tBPhone.Location = new System.Drawing.Point(440, 104);
             this.tBPhone.Name = "tBPhone";
             this.tBPhone.Size = new System.Drawing.Size(155, 20);
             this.tBPhone.TabIndex = 14;
             // 
             // tBAddress
             // 
-            this.tBAddress.Location = new System.Drawing.Point(435, 148);
+            this.tBAddress.Location = new System.Drawing.Point(440, 130);
             this.tBAddress.Name = "tBAddress";
             this.tBAddress.Size = new System.Drawing.Size(155, 20);
             this.tBAddress.TabIndex = 15;
             // 
             // tBCCCD
             // 
-            this.tBCCCD.Location = new System.Drawing.Point(435, 71);
+            this.tBCCCD.Location = new System.Drawing.Point(440, 53);
             this.tBCCCD.Name = "tBCCCD";
             this.tBCCCD.Size = new System.Drawing.Size(155, 20);
             this.tBCCCD.TabIndex = 16;
@@ -222,7 +222,7 @@ namespace QLTHPT_KTPMUD_2022._2
             "Tiếng Anh",
             "Toán",
             "Văn "});
-            this.cBMH.Location = new System.Drawing.Point(84, 148);
+            this.cBMH.Location = new System.Drawing.Point(89, 130);
             this.cBMH.Name = "cBMH";
             this.cBMH.Size = new System.Drawing.Size(155, 21);
             this.cBMH.Sorted = true;
@@ -238,7 +238,7 @@ namespace QLTHPT_KTPMUD_2022._2
             "Khác",
             "Nam",
             "Nữ"});
-            this.cBSex.Location = new System.Drawing.Point(84, 175);
+            this.cBSex.Location = new System.Drawing.Point(89, 157);
             this.cBSex.Name = "cBSex";
             this.cBSex.Size = new System.Drawing.Size(155, 21);
             this.cBSex.Sorted = true;
@@ -248,7 +248,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 178);
+            this.label9.Location = new System.Drawing.Point(25, 160);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 21;
@@ -259,7 +259,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.tBdateGV.CustomFormat = "dd/MM/yyyy";
             this.tBdateGV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.tBdateGV.Location = new System.Drawing.Point(435, 96);
+            this.tBdateGV.Location = new System.Drawing.Point(440, 78);
             this.tBdateGV.Name = "tBdateGV";
             this.tBdateGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBdateGV.Size = new System.Drawing.Size(155, 20);
@@ -270,7 +270,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // btnAddGV
             // 
             this.btnAddGV.AutoSize = true;
-            this.btnAddGV.Location = new System.Drawing.Point(151, 12);
+            this.btnAddGV.Location = new System.Drawing.Point(700, 25);
             this.btnAddGV.Name = "btnAddGV";
             this.btnAddGV.Size = new System.Drawing.Size(88, 32);
             this.btnAddGV.TabIndex = 25;
@@ -281,7 +281,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // btnFixGV
             // 
             this.btnFixGV.AutoSize = true;
-            this.btnFixGV.Location = new System.Drawing.Point(274, 12);
+            this.btnFixGV.Location = new System.Drawing.Point(700, 71);
             this.btnFixGV.Name = "btnFixGV";
             this.btnFixGV.Size = new System.Drawing.Size(88, 32);
             this.btnFixGV.TabIndex = 26;
@@ -291,7 +291,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // btnFindGV
             // 
             this.btnFindGV.AutoSize = true;
-            this.btnFindGV.Location = new System.Drawing.Point(395, 12);
+            this.btnFindGV.Location = new System.Drawing.Point(700, 116);
             this.btnFindGV.Name = "btnFindGV";
             this.btnFindGV.Size = new System.Drawing.Size(88, 32);
             this.btnFindGV.TabIndex = 27;
@@ -301,7 +301,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // btnDelGV
             // 
             this.btnDelGV.AutoSize = true;
-            this.btnDelGV.Location = new System.Drawing.Point(516, 12);
+            this.btnDelGV.Location = new System.Drawing.Point(700, 159);
             this.btnDelGV.Name = "btnDelGV";
             this.btnDelGV.Size = new System.Drawing.Size(88, 32);
             this.btnDelGV.TabIndex = 28;
@@ -311,7 +311,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(245, 176);
+            this.checkBox4.Location = new System.Drawing.Point(250, 158);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(80, 17);
             this.checkBox4.TabIndex = 23;
@@ -322,7 +322,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(245, 149);
+            this.checkBox5.Location = new System.Drawing.Point(250, 131);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(80, 17);
             this.checkBox5.TabIndex = 24;
@@ -333,7 +333,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(245, 124);
+            this.checkBox2.Location = new System.Drawing.Point(250, 106);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(80, 17);
             this.checkBox2.TabIndex = 17;
@@ -344,7 +344,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(245, 98);
+            this.checkBox3.Location = new System.Drawing.Point(250, 80);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(80, 17);
             this.checkBox3.TabIndex = 18;
@@ -355,7 +355,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(245, 72);
+            this.checkBox1.Location = new System.Drawing.Point(250, 54);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(71, 17);
             this.checkBox1.TabIndex = 4;
@@ -375,7 +375,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(596, 150);
+            this.checkBox6.Location = new System.Drawing.Point(601, 132);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(80, 17);
             this.checkBox6.TabIndex = 34;
@@ -385,7 +385,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(596, 99);
+            this.checkBox8.Location = new System.Drawing.Point(601, 81);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(80, 17);
             this.checkBox8.TabIndex = 32;
@@ -395,7 +395,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(596, 125);
+            this.checkBox9.Location = new System.Drawing.Point(601, 107);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(80, 17);
             this.checkBox9.TabIndex = 31;
@@ -405,7 +405,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(596, 73);
+            this.checkBox7.Location = new System.Drawing.Point(601, 55);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(71, 17);
             this.checkBox7.TabIndex = 30;

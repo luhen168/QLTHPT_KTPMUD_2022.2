@@ -4,11 +4,7 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     partial class signIn
     {
-        MainPage mainpage; //Tạo 1 đối tượng và 1 
-        //Tao 1 chuoi ket noi SQL server
-        string strConnection = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
-        SqlConnection conn;
-        SqlCommand cmd;
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -50,17 +46,17 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // tBUserName
             // 
-            this.tBUserName.Location = new System.Drawing.Point(356, 188);
+            this.tBUserName.Location = new System.Drawing.Point(445, 186);
             this.tBUserName.Name = "tBUserName";
-            this.tBUserName.Size = new System.Drawing.Size(134, 20);
+            this.tBUserName.Size = new System.Drawing.Size(223, 20);
             this.tBUserName.TabIndex = 0;
             this.tBUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tBPass
             // 
-            this.tBPass.Location = new System.Drawing.Point(356, 234);
+            this.tBPass.Location = new System.Drawing.Point(445, 226);
             this.tBPass.Name = "tBPass";
-            this.tBPass.Size = new System.Drawing.Size(134, 20);
+            this.tBPass.Size = new System.Drawing.Size(223, 20);
             this.tBPass.TabIndex = 1;
             this.tBPass.UseSystemPasswordChar = true;
             // 
@@ -69,7 +65,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.labelUserName.AutoSize = true;
             this.labelUserName.BackColor = System.Drawing.Color.Transparent;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(296, 191);
+            this.labelUserName.Location = new System.Drawing.Point(370, 186);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(64, 13);
             this.labelUserName.TabIndex = 2;
@@ -82,7 +78,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.labelPass.AutoSize = true;
             this.labelPass.BackColor = System.Drawing.Color.Transparent;
             this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPass.Location = new System.Drawing.Point(296, 237);
+            this.labelPass.Location = new System.Drawing.Point(370, 226);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(60, 13);
             this.labelPass.TabIndex = 3;
@@ -92,9 +88,9 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(384, 273);
+            this.btnSignIn.Location = new System.Drawing.Point(482, 288);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(75, 23);
+            this.btnSignIn.Size = new System.Drawing.Size(164, 44);
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Đăng nhập";
             this.btnSignIn.UseVisualStyleBackColor = true;
@@ -105,9 +101,9 @@ namespace QLTHPT_KTPMUD_2022._2
             this.logo.BackgroundImage = global::QLTHPT_KTPMUD_2022._2.Properties.Resources.logo;
             this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
-            this.logo.Location = new System.Drawing.Point(341, 64);
+            this.logo.Location = new System.Drawing.Point(38, 132);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 118);
+            this.logo.Size = new System.Drawing.Size(281, 215);
             this.logo.TabIndex = 6;
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.signIn_Resize);
@@ -116,7 +112,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // Incorrect
             // 
             this.Incorrect.AutoSize = true;
-            this.Incorrect.Location = new System.Drawing.Point(353, 257);
+            this.Incorrect.Location = new System.Drawing.Point(455, 258);
             this.Incorrect.Name = "Incorrect";
             this.Incorrect.Size = new System.Drawing.Size(0, 13);
             this.Incorrect.TabIndex = 7;
@@ -125,7 +121,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // cBPass
             // 
             this.cBPass.AutoSize = true;
-            this.cBPass.Location = new System.Drawing.Point(496, 236);
+            this.cBPass.Location = new System.Drawing.Point(693, 229);
             this.cBPass.Name = "cBPass";
             this.cBPass.Size = new System.Drawing.Size(95, 17);
             this.cBPass.TabIndex = 8;

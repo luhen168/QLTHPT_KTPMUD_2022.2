@@ -48,8 +48,8 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle checkBox8OriginalRect;
         private Rectangle checkBox9OriginalRect;
         private Rectangle dgvGVOriginalRect;
-
         private Size QLGVOriginalSize;
+     
 
         public QLGV()
         {
@@ -58,7 +58,8 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void QLGV_Load(object sender, EventArgs e)
         {
-            QLGVOriginalSize = this.Size;
+            
+            QLGVOriginalSize = this.Size ;
             tBNameOriginalRect = new Rectangle(tBName.Location.X, tBName.Location.Y, tBName.Width, tBName.Height);
             tBIDOriginalRect = new Rectangle(tBID.Location.X, tBID.Location.Y, tBID.Width, tBID.Height);
             tBMaGVOriginalRect = new Rectangle(tBmaGV.Location.X, tBmaGV.Location.Y, tBmaGV.Width, tBmaGV.Height);

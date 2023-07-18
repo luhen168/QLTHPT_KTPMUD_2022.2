@@ -26,7 +26,9 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle checkBox1Rec;
         private Rectangle btnSignInRec;
         private Size signInForm;
-
+        MainPage mainpage; //Tạo 1 đối tượng và 1 
+        SqlConnection conn;//Tao 1 chuoi ket noi SQL server
+        SqlCommand cmd;
         public signIn()
         {
             InitializeComponent();
@@ -49,9 +51,9 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string connectionString = DatabaseConnection.Instance.ConnectionString;
             string query = "SELECT COUNT(*) FROM dbo.TK WHERE TenND = @username AND MatKhau = @password"; //Đếm số tài khoản 
-            conn = new SqlConnection(strConnection); //Tao 1 ket noi toi SQL server
+            conn = new SqlConnection(connectionString);
             conn.Open();
             cmd = new SqlCommand(query, conn); //Thuc thi lenh de truy van toi bang trong SQL Server
             cmd.Parameters.Add(new SqlParameter("@username",tBUserName.Text)); //Nhan vao tu ban phim
