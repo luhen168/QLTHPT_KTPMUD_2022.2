@@ -12,13 +12,10 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class MainPage : Form
     {
-        private Size previousFormSize;
-
         public MainPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-
         }
 
         private void MainPage_Load(object sender, EventArgs e)

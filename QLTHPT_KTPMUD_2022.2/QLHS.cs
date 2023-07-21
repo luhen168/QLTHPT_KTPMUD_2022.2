@@ -16,5 +16,10 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             InitializeComponent();
         }
+
+        private void QLHS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
