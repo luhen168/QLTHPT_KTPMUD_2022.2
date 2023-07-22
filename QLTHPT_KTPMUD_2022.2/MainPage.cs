@@ -12,6 +12,15 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class MainPage : Form
     {
+        QLGV qlgv;
+        QLHS qlhs;
+        QLLH qllh;
+        QLBCTK qlbctk;
+        QLMH qlmh;
+        QLKQHT qlkqht;
+        QLTK qltk;
+        string connectionString = DatabaseConnection.Instance.ConnectionString;
+        signIn signin;
         public MainPage()
         {
             InitializeComponent();

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
 
 
@@ -265,7 +263,7 @@ namespace QLTHPT_KTPMUD_2022._2
                         "INSERT INTO NDGV (MaID, MaGV, NgayBD, BoMon) VALUES (@MaID, @MaGV, @NgayBD, @BoMon) COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));//Sử dụng toán tử điều kiện 2 ngôi 
                         command.Parameters.Add(new SqlParameter("@NgayBD", (tBStartDate.CustomFormat == " ") ? (object)DBNull.Value : tBStartDate.Value));
                         command.Parameters.Add(new SqlParameter("@DOB", (tBdateGV.CustomFormat == " ") ? (object)DBNull.Value : tBdateGV.Value));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
@@ -313,7 +311,7 @@ namespace QLTHPT_KTPMUD_2022._2
                         "UPDATE NDGV SET NgayBD = @NgayBD,NgayKT = @NgayKT, BoMon = @BoMon WHERE MaID = @MaID; COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));//Sử dụng toán tử điều kiện 2 ngôi 
                         command.Parameters.Add(new SqlParameter("@NgayBD", (tBStartDate.CustomFormat == " ") ? (object)DBNull.Value : tBStartDate.Value));
                         command.Parameters.Add(new SqlParameter("@DOB", (tBdateGV.CustomFormat == " ") ? (object)DBNull.Value : tBdateGV.Value));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
@@ -365,8 +363,8 @@ namespace QLTHPT_KTPMUD_2022._2
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.Add(new SqlParameter("@NgayKT", tBEndDate.Value));
-                        command.Parameters.Add(new SqlParameter("@NgayBD", tBStartDate.Text));
-                        command.Parameters.Add(new SqlParameter("@DOB", tBdateGV.Text));
+                        command.Parameters.Add(new SqlParameter("@NgayBD", tBStartDate.Value));
+                        command.Parameters.Add(new SqlParameter("@DOB", tBdateGV.Value));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
                         command.Parameters.Add(new SqlParameter("@DiaChi", tBAddress.Text));
@@ -413,7 +411,6 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             tBStartDate.CustomFormat = "dd/MM/yyyy";
         }
-
         private void tBEndDate_ValueChanged(object sender, EventArgs e)
         {
             tBEndDate.CustomFormat = "dd/MM/yyyy";
@@ -422,12 +419,10 @@ namespace QLTHPT_KTPMUD_2022._2
         {
 
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void cBSex_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -441,7 +436,6 @@ namespace QLTHPT_KTPMUD_2022._2
                  tBEndDate.CustomFormat = " "; // Ẩn giá trị ngày
             }
         }
-
         private void tBdateGV_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
@@ -449,7 +443,6 @@ namespace QLTHPT_KTPMUD_2022._2
                 tBdateGV.CustomFormat = " "; // Ẩn giá trị ngày
             }
         }
-
         private void tBStartDate_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
