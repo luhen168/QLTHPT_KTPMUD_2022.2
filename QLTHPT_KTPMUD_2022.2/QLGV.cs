@@ -459,7 +459,7 @@ namespace QLTHPT_KTPMUD_2022._2
 
         }
 
-        //Thực hiện xóa ngày 
+        //Thực hiện xóa ngày bằng KeyDown
         private void tBEndDate_KeyDown(object sender, KeyEventArgs e)
         {
             if((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
