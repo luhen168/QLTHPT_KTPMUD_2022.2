@@ -6,11 +6,11 @@ namespace QLTHPT_KTPMUD_2022._2
     {
         QLGV qlgv;
         QLHS qlhs;
-        //QLLH qllh;
-        //QLBCTK qlbctk;
-        //QLMH qlmh;
-        //QLKQHT qlkqht;
-        //QLTK qltk;
+        QLLH qllh;
+        QLBCTK qlbctk;
+        QLMH qlmh;
+        QLKQHT qlkqht;
+        QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
         signIn signin;
         /// <summary>

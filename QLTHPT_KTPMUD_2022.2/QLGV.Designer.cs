@@ -202,7 +202,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.cBMH.Size = new System.Drawing.Size(213, 21);
             this.cBMH.Sorted = true;
             this.cBMH.TabIndex = 19;
-            this.cBMH.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cBSex
             // 
@@ -217,7 +216,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.cBSex.Size = new System.Drawing.Size(213, 21);
             this.cBSex.Sorted = true;
             this.cBSex.TabIndex = 20;
-            this.cBSex.SelectedIndexChanged += new System.EventHandler(this.cBSex_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -293,7 +291,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.dgvGV.Name = "dgvGV";
             this.dgvGV.Size = new System.Drawing.Size(800, 224);
             this.dgvGV.TabIndex = 29;
-            this.dgvGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGV_RowHeaderMouseClick_1);
             // 
             // tBEmail
@@ -336,7 +333,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(612, 20);
             this.tBFind.TabIndex = 44;
-            this.tBFind.TextChanged += new System.EventHandler(this.tBFind_TextChanged);
             // 
             // btnBack
             // 

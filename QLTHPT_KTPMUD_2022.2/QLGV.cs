@@ -399,10 +399,6 @@ namespace QLTHPT_KTPMUD_2022._2
         }
 
         //Các hàm có sẵn
-        private void tBFind_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void tBdateGV_ValueChanged(object sender, EventArgs e)
         {
             tBdateGV.CustomFormat = "dd/MM/yyyy";
@@ -415,18 +411,8 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             tBEndDate.CustomFormat = "dd/MM/yyyy";
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-        private void cBSex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //Thực hiện xóa ngày bằng KeyDown
         private void tBEndDate_KeyDown(object sender, KeyEventArgs e)
