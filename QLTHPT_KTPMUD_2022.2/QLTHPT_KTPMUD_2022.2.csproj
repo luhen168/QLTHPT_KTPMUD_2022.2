@@ -127,6 +127,12 @@
     <EmbeddedResource Include="QLHS.resx">
       <DependentUpon>QLHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLLH.resx">
+      <DependentUpon>QLLH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLMH.resx">
+      <DependentUpon>QLMH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
