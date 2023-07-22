@@ -5,7 +5,7 @@ namespace QLTHPT_KTPMUD_2022._2
     partial class MainPage
     {
         QLGV qlgv;
-        //QLHS qlhs;
+        /QLHS qlhs;
         //QLLH qllh;
         //QLBCTK qlbctk;
         //QLMH qlmh;
