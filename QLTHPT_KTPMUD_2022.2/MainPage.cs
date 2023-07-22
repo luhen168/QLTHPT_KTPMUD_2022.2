@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,7 +82,9 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLLH_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            QLLH qllh = new QLLH();
+            qllh.Show();
         }
 
         private void delGV_Click(object sender, EventArgs e)
@@ -111,6 +114,14 @@ namespace QLTHPT_KTPMUD_2022._2
                 signin = new signIn(); //tạo 1 đối tượng để quay lại màn hình đăng nhập
                 signin.Show(); //sử dụng phương thức Show hiển thị ra màn hình đăng nhập
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string videoPath = Path.Combine(Application.StartupPath, "a.mp4");
+
+            // Kiểm tra xem tập tin video có tồn tại không trước khi phát
+            
         }
     }
 }

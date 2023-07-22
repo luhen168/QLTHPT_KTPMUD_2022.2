@@ -127,6 +127,9 @@
     <EmbeddedResource Include="QLHS.resx">
       <DependentUpon>QLHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLLH.resx">
+      <DependentUpon>QLLH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +176,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\a.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
