@@ -39,8 +39,8 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuQLKQHT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQLTK = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.signOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQLHS = new System.Windows.Forms.ToolStripMenuItem();
+            this.signOut = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuQLMH.Name = "menuQLMH";
             this.menuQLMH.Size = new System.Drawing.Size(111, 20);
             this.menuQLMH.Text = "Quản lý Môn học";
+            this.menuQLMH.Click += new System.EventHandler(this.menuQLMH_Click);
             // 
             // menuQLKQHT
             // 
@@ -101,19 +102,19 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // signOut
-            // 
-            this.signOut.Name = "signOut";
-            this.signOut.Size = new System.Drawing.Size(73, 20);
-            this.signOut.Text = "Đăng xuất";
-            this.signOut.Click += new System.EventHandler(this.signOut_Click);
-            // 
             // menuQLHS
             // 
             this.menuQLHS.Name = "menuQLHS";
             this.menuQLHS.Size = new System.Drawing.Size(110, 20);
             this.menuQLHS.Text = "Quản lý Học sinh";
             this.menuQLHS.Click += new System.EventHandler(this.menuQLHS_Click);
+            // 
+            // signOut
+            // 
+            this.signOut.Name = "signOut";
+            this.signOut.Size = new System.Drawing.Size(73, 20);
+            this.signOut.Text = "Đăng xuất";
+            this.signOut.Click += new System.EventHandler(this.signOut_Click);
             // 
             // MainPage
             // 
