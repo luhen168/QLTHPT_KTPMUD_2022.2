@@ -76,7 +76,7 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLHS_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void menuQLLH_Click(object sender, EventArgs e)
@@ -111,6 +111,13 @@ namespace QLTHPT_KTPMUD_2022._2
                 signin = new signIn(); //tạo 1 đối tượng để quay lại màn hình đăng nhập
                 signin.Show(); //sử dụng phương thức Show hiển thị ra màn hình đăng nhập
             }
+        }
+
+        private void menuQLMH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            qlmh = new QLMH();
+            qlmh.Show();
         }
     }
 }

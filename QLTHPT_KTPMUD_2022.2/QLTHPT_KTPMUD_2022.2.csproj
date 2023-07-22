@@ -86,6 +86,11 @@
     <Compile Include="QLKQHT.Designer.cs">
       <DependentUpon>QLKQHT.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLTHPT_20222DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTHPT_20222DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLTK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +132,9 @@
     <EmbeddedResource Include="QLHS.resx">
       <DependentUpon>QLHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLMH.resx">
+      <DependentUpon>QLMH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +162,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTHPT_20222DataSet.xsc">
+      <DependentUpon>QLTHPT_20222DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTHPT_20222DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTHPT_20222DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTHPT_20222DataSet.xss">
+      <DependentUpon>QLTHPT_20222DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\background_school.png" />
   </ItemGroup>
   <ItemGroup>

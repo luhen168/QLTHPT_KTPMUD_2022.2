@@ -483,5 +483,10 @@ namespace QLTHPT_KTPMUD_2022._2
                 tBStartDate.CustomFormat = " "; // Ẩn giá trị ngày
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
