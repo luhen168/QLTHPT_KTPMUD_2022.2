@@ -4,7 +4,6 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     partial class MainPage
     {
-
         /// <summary>
         /// Required designer variable.
         /// </summary>

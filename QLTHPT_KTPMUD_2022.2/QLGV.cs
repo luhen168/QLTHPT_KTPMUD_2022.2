@@ -28,6 +28,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private Rectangle btnFixGVOriginalRect;
         private Rectangle btnFindGVOriginalRect;
         private Rectangle btnDelGVOriginalRect;
+        private Rectangle btnBackOriginalRect;
         private Rectangle label1OriginalRect;
         private Rectangle label2OriginalRect;
         private Rectangle label3OriginalRect;
@@ -83,6 +84,7 @@ namespace QLTHPT_KTPMUD_2022._2
             btnFixGVOriginalRect = new Rectangle(btnFixGV.Location.X, btnFixGV.Location.Y, btnFixGV.Width, btnFixGV.Height);
             btnFindGVOriginalRect = new Rectangle(btnFindGV.Location.X, btnFindGV.Location.Y, btnFindGV.Width, btnFindGV.Height);
             btnDelGVOriginalRect = new Rectangle(btnDelGV.Location.X, btnDelGV.Location.Y, btnDelGV.Width, btnDelGV.Height);
+            btnBackOriginalRect = new Rectangle(btnBack.Location.X, btnBack.Location.Y, btnBack.Width, btnBack.Height);
             dgvGVOriginalRect = new Rectangle(dgvGV.Location.X, dgvGV.Location.Y, dgvGV.Width, dgvGV.Height);
 
             LoadData();
@@ -108,6 +110,7 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(btnFixGVOriginalRect, btnFixGV);
             resizeControl(btnDelGVOriginalRect, btnDelGV);
             resizeControl(btnFindGVOriginalRect, btnFindGV);
+            resizeControl(btnBackOriginalRect, btnBack);
             resizeControl(label1OriginalRect, label1);
             resizeControl(label2OriginalRect, label2);
             resizeControl(label3OriginalRect, label3);
@@ -396,10 +399,6 @@ namespace QLTHPT_KTPMUD_2022._2
         }
 
         //Các hàm có sẵn
-        private void tBFind_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void tBdateGV_ValueChanged(object sender, EventArgs e)
         {
             tBdateGV.CustomFormat = "dd/MM/yyyy";
@@ -412,18 +411,8 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             tBEndDate.CustomFormat = "dd/MM/yyyy";
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-        private void cBSex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //Thực hiện xóa ngày bằng KeyDown
         private void tBEndDate_KeyDown(object sender, KeyEventArgs e)
