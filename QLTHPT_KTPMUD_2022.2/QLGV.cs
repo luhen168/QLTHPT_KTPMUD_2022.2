@@ -125,7 +125,6 @@ namespace QLTHPT_KTPMUD_2022._2
             resizeControl(dgvGVOriginalRect, dgvGV);
         }
 
-
         //Hàm sử dụng để kiểm soát việc thay đổi kích thước lưu kích thước ban đầu và kích thước hiện tại 
         private void resizeControl(Rectangle OriginalControlRect, Control control)
         {
@@ -156,7 +155,7 @@ namespace QLTHPT_KTPMUD_2022._2
             mainPage.Show();
         }
 
-        //Thực hiện tải lại dữ liệu 
+        //Thực hiện tải dữ liệu 
         private void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -263,8 +262,9 @@ namespace QLTHPT_KTPMUD_2022._2
                         "INSERT INTO NDGV (MaID, MaGV, NgayBD, BoMon) VALUES (@MaID, @MaGV, @NgayBD, @BoMon) COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@NgayBD", tBStartDate.Value));
-                        command.Parameters.Add(new SqlParameter("@DOB", tBdateGV.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayBD", (tBStartDate.CustomFormat == " ") ? (object)DBNull.Value : tBStartDate.Value));
+                        command.Parameters.Add(new SqlParameter("@DOB", (tBdateGV.CustomFormat == " ") ? (object)DBNull.Value : tBdateGV.Value));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
                         command.Parameters.Add(new SqlParameter("@DiaChi", tBAddress.Text));
@@ -310,9 +310,9 @@ namespace QLTHPT_KTPMUD_2022._2
                         "UPDATE NDGV SET NgayBD = @NgayBD,NgayKT = @NgayKT, BoMon = @BoMon WHERE MaID = @MaID; COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@NgayKT", tBEndDate.Value));
-                        command.Parameters.Add(new SqlParameter("@NgayBD", tBStartDate.Value));
-                        command.Parameters.Add(new SqlParameter("@DOB", tBdateGV.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayKT", (tBEndDate.CustomFormat == " ") ? (object)DBNull.Value : tBEndDate.Value));
+                        command.Parameters.Add(new SqlParameter("@NgayBD", (tBStartDate.CustomFormat == " ") ? (object)DBNull.Value : tBStartDate.Value));
+                        command.Parameters.Add(new SqlParameter("@DOB", (tBdateGV.CustomFormat == " ") ? (object)DBNull.Value : tBdateGV.Value));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
                         command.Parameters.Add(new SqlParameter("@DiaChi", tBAddress.Text));
@@ -361,7 +361,7 @@ namespace QLTHPT_KTPMUD_2022._2
                         "WHERE MaID = @MaID) DELETE FROM TK WHERE MaID = @MaID DELETE FROM NDGV WHERE MaID = @MaID\r\nDELETE FROM ND WHERE MaID = @MaID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@NgayKT", tBEndDate.Text));
+                        command.Parameters.Add(new SqlParameter("@NgayKT", tBEndDate.Value));
                         command.Parameters.Add(new SqlParameter("@NgayBD", tBStartDate.Text));
                         command.Parameters.Add(new SqlParameter("@DOB", tBdateGV.Text));
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
@@ -396,7 +396,6 @@ namespace QLTHPT_KTPMUD_2022._2
                 ClearData();
             }
         }
-
 
         //Các hàm có sẵn
         private void tBFind_TextChanged(object sender, EventArgs e)
@@ -458,6 +457,31 @@ namespace QLTHPT_KTPMUD_2022._2
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //Thực hiện xóa ngày 
+        private void tBEndDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            {
+                 tBEndDate.CustomFormat = " "; // Ẩn giá trị ngày
+            }
+        }
+
+        private void tBdateGV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            {
+                tBdateGV.CustomFormat = " "; // Ẩn giá trị ngày
+            }
+        }
+
+        private void tBStartDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+            {
+                tBStartDate.CustomFormat = " "; // Ẩn giá trị ngày
+            }
         }
     }
 }

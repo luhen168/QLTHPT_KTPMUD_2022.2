@@ -240,6 +240,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBdateGV.UseWaitCursor = true;
             this.tBdateGV.Value = new System.DateTime(2023, 7, 21, 0, 0, 0, 0);
             this.tBdateGV.ValueChanged += new System.EventHandler(this.tBdateGV_ValueChanged);
+            this.tBdateGV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBdateGV_KeyDown);
             // 
             // btnAddGV
             // 
@@ -359,6 +360,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBStartDate.UseWaitCursor = true;
             this.tBStartDate.Value = new System.DateTime(2023, 7, 17, 0, 0, 0, 0);
             this.tBStartDate.ValueChanged += new System.EventHandler(this.tBStartDate_ValueChanged);
+            this.tBStartDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBStartDate_KeyDown);
             // 
             // tBEndDate
             // 
@@ -372,6 +374,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBEndDate.UseWaitCursor = true;
             this.tBEndDate.Value = new System.DateTime(2023, 7, 17, 0, 0, 0, 0);
             this.tBEndDate.ValueChanged += new System.EventHandler(this.tBEndDate_ValueChanged);
+            this.tBEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBEndDate_KeyDown);
             // 
             // QLGV
             // 
