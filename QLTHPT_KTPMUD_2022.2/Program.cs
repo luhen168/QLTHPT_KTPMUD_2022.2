@@ -20,6 +20,7 @@ namespace QLTHPT_KTPMUD_2022._2
             //Application.Run(new MainPage());
             //Application.Run(new QLGV());
             Application.Run(new QLHS());
+            //Application.Run(new QLMH());
         }
     }
 }

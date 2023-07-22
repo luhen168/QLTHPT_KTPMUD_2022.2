@@ -83,6 +83,7 @@ namespace QLTHPT_KTPMUD_2022._2
             tBClassOriginalRect = new Rectangle(tBClass.Location.X, tBClass.Location.Y, tBClass.Width, tBClass.Height);
             tBHocKyOriginalRect = new Rectangle(tBHocKy.Location.X, tBHocKy.Location.Y, tBHocKy.Width, tBHocKy.Height);
             tBDiemTBOriginalRect = new Rectangle(tBDiemTB.Location.X, tBDiemTB.Location.Y, tBDiemTB.Width, tBDiemTB.Height);
+            tBNienKhoaOriginalRect = new Rectangle(tBNienKhoa.Location.X, tBNienKhoa.Location.Y, tBNienKhoa.Width, tBNienKhoa.Height);
             cBSexOriginalRect = new Rectangle(cBSex.Location.X, cBSex.Location.Y, cBSex.Width, cBSex.Height);
             label1OriginalRect = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
             label2OriginalRect = new Rectangle(label2.Location.X, label2.Location.Y, label2.Width, label2.Height);
@@ -172,11 +173,20 @@ namespace QLTHPT_KTPMUD_2022._2
             control.Size = new Size(newWidth, newHeight);
         }
 
-        private void QLHS_Resize_1(object sender, EventArgs e)
+        //Sự kiện thay đổi kích thước
+        private void QLHS_Resize(object sender, EventArgs e)
         {
             resizeChildrenControls();
         }
 
+        //Thực hiện quay lại mà hình chính
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainPage.Show();
+        }
+
+        //Thực hiện tải lại dữ liệu lêm GV
         private void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -187,84 +197,8 @@ namespace QLTHPT_KTPMUD_2022._2
             }
             dgvHS.DataSource = dataTable;
         }
-        private void tBName_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tBEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cBSex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnFixHS_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = "BEGIN TRAN UPDATE ND SET HoVaTen = @HoVaTen,DOB = @DOB,DiaChi = @DiaChi," +
-                        "CCCD = @CCCD,SDT = @SDT,Email = @Email,GioiTinh = @GioiTinh WHERE MaID = @MaID;" +
-                        "UPDATE NDHS SET NienKhoa = @NK, ThongTinPH = @ThongTinPH, HocPhi = @HocPhi, XepLoaiHL = @XepLoaiHL, HanhKiem = @HanhKiem, TenLop = @TenLop, DiemTBHK = @DiemTBHK, HocKy = @HK WHERE MaID = @MaID; COMMIT TRAN";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.Add(new SqlParameter("@DOB", (tBdateHS.CustomFormat == " ") ? (object)DBNull.Value : tBdateHS.Value));
-                        command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
-                        command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
-                        command.Parameters.Add(new SqlParameter("@DiaChi", tBAddress.Text));
-                        command.Parameters.Add(new SqlParameter("@GioiTinh", cBSex.Text));
-                        command.Parameters.Add(new SqlParameter("@Email", tBEmail.Text));
-                        command.Parameters.Add(new SqlParameter("@SDT", tBPhone.Text));
-                        command.Parameters.Add(new SqlParameter("@XepLoaiHL", cBHL.Text));
-                        command.Parameters.Add(new SqlParameter("@MaHS", tBmaHS.Text));
-                        command.Parameters.Add(new SqlParameter("@CCCD", tBCCCD.Text));
-                        command.Parameters.Add(new SqlParameter("@NK", tBNienKhoa.Text));
-                        command.Parameters.Add(new SqlParameter("@ThongTinPH", tBPH.Text));
-                        command.Parameters.Add(new SqlParameter("@HocPhi", tBHocPhi.Text));
-                        command.Parameters.Add(new SqlParameter("@HanhKiem", cBHanhKiem.Text));
-                        command.Parameters.Add(new SqlParameter("@TenLop", tBClass.Text));
-                        command.Parameters.Add(new SqlParameter("@DiemTBHK", tBDiemTB.Text));
-                        command.Parameters.Add(new SqlParameter("@HK", tBHocKy.Text));
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Sửa dữ liệu thành công!");
-                            // Sau khi SỬA thành công
-                            dataTable.Clear();
-                            LoadData();
-                            ClearData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể sửa dữ liệu!");
-                            ClearData();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message);
-                ClearData();
-            }
-        }
-
+        //Thực hiện xóa trên gridview
         private void ClearData()
         {
             tBdateHS.CustomFormat = " ";
@@ -287,6 +221,7 @@ namespace QLTHPT_KTPMUD_2022._2
             tBEmail.Text = "";
         }
 
+        //Thực hiện nhấn đầu dòng trong gridview
         private void dgvHS_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             tBName.Text = dgvHS.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -319,6 +254,7 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
+        //Thực hiện thêm dữu liệu vào SQL
         private void btnAddHS_Click(object sender, EventArgs e)
         {
             // Xử lý truy vấn INSERT vào cơ sở dữ liệu tại đây
@@ -372,12 +308,61 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        //Thực hiện sửa dữ liệu trong SQL
+        private void btnFixHS_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            mainPage.Show();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "BEGIN TRAN UPDATE ND SET HoVaTen = @HoVaTen,DOB = @DOB,DiaChi = @DiaChi," +
+                        "CCCD = @CCCD,SDT = @SDT,Email = @Email,GioiTinh = @GioiTinh WHERE MaID = @MaID;" +
+                        "UPDATE NDHS SET NienKhoa = @NK, ThongTinPH = @ThongTinPH, HocPhi = @HocPhi, XepLoaiHL = @XepLoaiHL, HanhKiem = @HanhKiem, TenLop = @TenLop, DiemTBHK = @DiemTBHK, HocKy = @HK WHERE MaID = @MaID; COMMIT TRAN";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@DOB", (tBdateHS.CustomFormat == " ") ? (object)DBNull.Value : tBdateHS.Value));
+                        command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
+                        command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
+                        command.Parameters.Add(new SqlParameter("@DiaChi", tBAddress.Text));
+                        command.Parameters.Add(new SqlParameter("@GioiTinh", cBSex.Text));
+                        command.Parameters.Add(new SqlParameter("@Email", tBEmail.Text));
+                        command.Parameters.Add(new SqlParameter("@SDT", tBPhone.Text));
+                        command.Parameters.Add(new SqlParameter("@XepLoaiHL", cBHL.Text));
+                        command.Parameters.Add(new SqlParameter("@MaHS", tBmaHS.Text));
+                        command.Parameters.Add(new SqlParameter("@CCCD", tBCCCD.Text));
+                        command.Parameters.Add(new SqlParameter("@NK", tBNienKhoa.Text));
+                        command.Parameters.Add(new SqlParameter("@ThongTinPH", tBPH.Text));
+                        command.Parameters.Add(new SqlParameter("@HocPhi", tBHocPhi.Text));
+                        command.Parameters.Add(new SqlParameter("@HanhKiem", cBHanhKiem.Text));
+                        command.Parameters.Add(new SqlParameter("@TenLop", tBClass.Text));
+                        command.Parameters.Add(new SqlParameter("@DiemTBHK", tBDiemTB.Text));
+                        command.Parameters.Add(new SqlParameter("@HK", tBHocKy.Text));
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Sửa dữ liệu thành công!");
+                            // Sau khi SỬA thành công
+                            dataTable.Clear();
+                            LoadData();
+                            ClearData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể sửa dữ liệu!");
+                            ClearData();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message);
+                ClearData();
+            }
         }
 
+        //Thực hiện tìm kiếm dữ liệu trong Gridview
         private void btnFindHS_Click(object sender, EventArgs e)
         {
             string search = tBFind.Text;
@@ -386,16 +371,7 @@ namespace QLTHPT_KTPMUD_2022._2
             dgvHS.DataSource = dv;
         }
 
-        private void tBdateHS_ValueChanged(object sender, EventArgs e)
-        {
-            tBdateHS.CustomFormat = "dd/MM/yyyy";
-        }
-
-        private void cBHanhKiem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Thực hiện XÓA dữ liệu trong SQL
         private void btnDelHS_Click(object sender, EventArgs e)
         {
             try
@@ -451,5 +427,12 @@ namespace QLTHPT_KTPMUD_2022._2
                 ClearData();
             }
         }
+
+        //Khi thay đổi VALUE ngày tháng thì định dạng lại ngày tháng
+        private void tBdateHS_ValueChanged(object sender, EventArgs e)
+        {
+            tBdateHS.CustomFormat = "dd/MM/yyyy";
+        }
+
     }
 }
