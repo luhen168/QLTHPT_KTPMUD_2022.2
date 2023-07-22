@@ -45,6 +45,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private DataTable dataTable = new DataTable(); //Tạo đối tượng bảng
         private MainPage mainPage = new MainPage(); //Tạo 1 đối tượng trang chủ thừa kế các method hoặc thuộc tính của lớp
         string connectionString = DatabaseConnection.Instance.ConnectionString;
+        QLGV qlgv;
 
         public QLGV()
         {
