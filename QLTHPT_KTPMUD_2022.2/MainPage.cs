@@ -15,10 +15,10 @@ namespace QLTHPT_KTPMUD_2022._2
         QLGV qlgv;
         QLHS qlhs;
         QLLH qllh;
-        //QLBCTK qlbctk;
+        QLBCTK qlbctk;
         QLMH qlmh;
-        //QLKQHT qlkqht;
-        //QLTK qltk;
+        QLKQHT qlkqht;
+        QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
         signIn signin;
         public MainPage()
@@ -32,46 +32,12 @@ namespace QLTHPT_KTPMUD_2022._2
             
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
         private void menuQLKQHT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuQLTK_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
         }
@@ -103,22 +69,6 @@ namespace QLTHPT_KTPMUD_2022._2
             qlmh = new QLMH();
             qlmh.Show();
         }
-
-        private void delGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fixGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         //Hàm xử lí Đăng xuất 
         private void signOut_Click(object sender, EventArgs e)
