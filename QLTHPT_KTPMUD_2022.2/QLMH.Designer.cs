@@ -46,12 +46,12 @@
             // dgvMH
             // 
             this.dgvMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMH.Location = new System.Drawing.Point(192, 188);
+            this.dgvMH.Location = new System.Drawing.Point(11, 55);
             this.dgvMH.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMH.Name = "dgvMH";
             this.dgvMH.RowHeadersWidth = 51;
             this.dgvMH.RowTemplate.Height = 24;
-            this.dgvMH.Size = new System.Drawing.Size(452, 277);
+            this.dgvMH.Size = new System.Drawing.Size(280, 277);
             this.dgvMH.TabIndex = 0;
             this.dgvMH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMH_RowHeaderMouseClick);
             // 
@@ -68,7 +68,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(662, 55);
+            this.btnAdd.Location = new System.Drawing.Point(662, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 35);
@@ -79,7 +79,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(662, 102);
+            this.btnUpdate.Location = new System.Drawing.Point(662, 175);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 35);
@@ -90,7 +90,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(662, 154);
+            this.btnDelete.Location = new System.Drawing.Point(662, 227);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(86, 35);
@@ -120,25 +120,25 @@
             // 
             // tBName
             // 
-            this.tBName.Location = new System.Drawing.Point(192, 72);
+            this.tBName.Location = new System.Drawing.Point(404, 145);
             this.tBName.Margin = new System.Windows.Forms.Padding(2);
             this.tBName.Name = "tBName";
-            this.tBName.Size = new System.Drawing.Size(452, 20);
+            this.tBName.Size = new System.Drawing.Size(240, 20);
             this.tBName.TabIndex = 7;
             // 
             // tBID
             // 
-            this.tBID.Location = new System.Drawing.Point(192, 132);
+            this.tBID.Location = new System.Drawing.Point(404, 205);
             this.tBID.Margin = new System.Windows.Forms.Padding(2);
             this.tBID.Name = "tBID";
-            this.tBID.Size = new System.Drawing.Size(452, 20);
+            this.tBID.Size = new System.Drawing.Size(240, 20);
             this.tBID.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 74);
+            this.label1.Location = new System.Drawing.Point(309, 146);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 17);
@@ -149,7 +149,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 134);
+            this.label2.Location = new System.Drawing.Point(315, 206);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 497);
+            this.ClientSize = new System.Drawing.Size(773, 352);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tBID);

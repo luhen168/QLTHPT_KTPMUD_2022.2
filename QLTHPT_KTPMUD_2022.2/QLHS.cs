@@ -307,7 +307,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);
             }
         }
-
+         
         //Thực hiện sửa dữ liệu trong SQL
         private void btnFixHS_Click(object sender, EventArgs e)
         {
