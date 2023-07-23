@@ -14,9 +14,9 @@ namespace QLTHPT_KTPMUD_2022._2
     {
         QLGV qlgv;
         QLHS qlhs;
-        //QLLH qllh;
+        QLLH qllh;
         //QLBCTK qlbctk;
-        //QLMH qlmh;
+        QLMH qlmh;
         //QLKQHT qlkqht;
         //QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
@@ -92,7 +92,16 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLLH_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            qllh = new QLLH();
+            qllh.Show();
+        }
 
+        private void menuQLMH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            qlmh = new QLMH();
+            qlmh.Show();
         }
 
         private void delGV_Click(object sender, EventArgs e)
@@ -123,5 +132,6 @@ namespace QLTHPT_KTPMUD_2022._2
                 signin.Show(); //sử dụng phương thức Show hiển thị ra màn hình đăng nhập
             }
         }
+
     }
 }
