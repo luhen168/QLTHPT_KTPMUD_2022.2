@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Net;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 
@@ -12,6 +15,18 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             InitializeComponent();
         }
+        private Rectangle tBNameOriginalRect;
+        private Rectangle tBIDOriginalRect;    //chuan roi anh zai
+        private Rectangle tBFindOriginalRect;
+        private Rectangle label1OriginalRect;
+        private Rectangle label2OriginalRect;
+        private Rectangle dgvMHOriginalRect;
+        private Rectangle btnAddOriginalRect;
+        private Rectangle btnUpdateOriginalRect;
+        private Rectangle btnFindOriginalRect;
+        private Rectangle btnDeleteOriginalRect;
+        private Rectangle BackOriginalRect;
+        private Size QLMHOriginalSize;
         private MainPage mainPage = new MainPage();
         private DataTable dataTable = new DataTable(); //Tạo đối tượng bảng
         string connectionString = DatabaseConnection.Instance.ConnectionString;
@@ -22,7 +37,50 @@ namespace QLTHPT_KTPMUD_2022._2
         }
         private void QLMH_Load(object sender, EventArgs e)
         {
+            QLMHOriginalSize = this.Size;
+            tBNameOriginalRect = new Rectangle(tBName.Location.X, tBName.Location.Y, tBName.Width, tBName.Height);
+            tBIDOriginalRect = new Rectangle(tBID.Location.X, tBID.Location.Y, tBID.Width, tBID.Height);
+            tBFindOriginalRect = new Rectangle(tBFind.Location.X, tBFind.Location.Y, tBFind.Width, tBFind.Height);
+            label1OriginalRect = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
+            label2OriginalRect = new Rectangle(label2.Location.X, label2.Location.Y, label2.Width, label2.Height);
+            btnAddOriginalRect = new Rectangle(btnAdd.Location.X, btnAdd.Location.Y, btnAdd.Width, btnAdd.Height);
+            btnUpdateOriginalRect = new Rectangle(btnUpdate.Location.X, btnUpdate.Location.Y, btnUpdate.Width, btnUpdate.Height);
+            btnFindOriginalRect = new Rectangle(btnFind.Location.X, btnFind.Location.Y, btnFind.Width, btnFind.Height);
+            btnDeleteOriginalRect = new Rectangle(btnDelete.Location.X, btnDelete.Location.Y, btnDelete.Width, btnDelete.Height);
+            BackOriginalRect = new Rectangle(Back.Location.X, Back.Location.Y, Back.Width, Back.Height);
+            dgvMHOriginalRect = new Rectangle(dgvMH.Location.X, dgvMH.Location.Y, dgvMH.Width, dgvMH.Height);
             LoadData();
+        }
+        private void resizeControl(Rectangle OriginalControlRect, Control control)
+        {
+            float xRatio = (float)(this.Width) / (float)(QLMHOriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(QLMHOriginalSize.Height);
+
+
+            int newX = (int)(OriginalControlRect.X * xRatio);
+            int newY = (int)(OriginalControlRect.Y * yRatio);
+
+            int newWidth = (int)(OriginalControlRect.Width * xRatio);
+            int newHeight = (int)(OriginalControlRect.Height * yRatio);
+
+            control.Location = new Point(newX, newY);
+            control.Size = new Size(newWidth, newHeight);
+        }
+        private void resizeChildrenControls()
+        {
+            resizeControl(tBNameOriginalRect, tBName);
+            resizeControl(tBIDOriginalRect, tBID);
+            resizeControl(tBFindOriginalRect, tBFind);
+            
+            resizeControl(btnAddOriginalRect, btnAdd);
+            resizeControl(btnUpdateOriginalRect, btnUpdate);
+            resizeControl(btnDeleteOriginalRect, btnDelete);
+            resizeControl(btnFindOriginalRect, btnFind);
+            resizeControl(BackOriginalRect, Back);
+            resizeControl(label1OriginalRect, label1);
+            resizeControl(label2OriginalRect, label2);
+            
+            resizeControl(dgvMHOriginalRect, dgvMH);
         }
         private void Find_Click(object sender, EventArgs e)
         {
@@ -163,6 +221,13 @@ namespace QLTHPT_KTPMUD_2022._2
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message);
                 ClearData();
             }
+        }
+
+       
+
+        private void QLMH_Resize(object sender, EventArgs e)
+        {
+            resizeChildrenControls();
         }
     }
 }

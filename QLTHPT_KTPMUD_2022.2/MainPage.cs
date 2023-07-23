@@ -16,7 +16,7 @@ namespace QLTHPT_KTPMUD_2022._2
         QLHS qlhs;
         //QLLH qllh;
         //QLBCTK qlbctk;
-        //QLMH qlmh;
+        QLMH qlmh;
         //QLKQHT qlkqht;
         //QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
@@ -122,6 +122,13 @@ namespace QLTHPT_KTPMUD_2022._2
                 signin = new signIn(); //tạo 1 đối tượng để quay lại màn hình đăng nhập
                 signin.Show(); //sử dụng phương thức Show hiển thị ra màn hình đăng nhập
             }
+        }
+
+        private void menuQLMH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            qlmh = new QLMH();
+            qlmh.Show();
         }
     }
 }

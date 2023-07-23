@@ -144,7 +144,7 @@ namespace QLTHPT_KTPMUD_2022._2
         }
 
         //Hàm thực hiện sự kiện thay đổi 
-        private void QLGV_Resize_1(object sender, EventArgs e)
+        private void QLGV_Resize_1(object sender, EventArgs e)// cai nay o dau anh zai
         {
             resizeChildrenControls();
         }
@@ -435,6 +435,11 @@ namespace QLTHPT_KTPMUD_2022._2
             {
                 tBStartDate.CustomFormat = " "; // Ẩn giá trị ngày
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
