@@ -47,7 +47,7 @@
             // 
             this.dgvMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMH.Location = new System.Drawing.Point(192, 188);
-            this.dgvMH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMH.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMH.Name = "dgvMH";
             this.dgvMH.RowHeadersWidth = 51;
             this.dgvMH.RowTemplate.Height = 24;
@@ -58,7 +58,7 @@
             // Back
             // 
             this.Back.Location = new System.Drawing.Point(9, 10);
-            this.Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Back.Margin = new System.Windows.Forms.Padding(2);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(81, 34);
             this.Back.TabIndex = 1;
@@ -69,7 +69,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(662, 55);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 35);
             this.btnAdd.TabIndex = 2;
@@ -80,7 +80,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(662, 102);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 35);
             this.btnUpdate.TabIndex = 3;
@@ -91,7 +91,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(662, 154);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(86, 35);
             this.btnDelete.TabIndex = 4;
@@ -102,7 +102,7 @@
             // tBFind
             // 
             this.tBFind.Location = new System.Drawing.Point(192, 17);
-            this.tBFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBFind.Margin = new System.Windows.Forms.Padding(2);
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(452, 20);
             this.tBFind.TabIndex = 5;
@@ -110,7 +110,7 @@
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(662, 10);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(86, 35);
             this.btnFind.TabIndex = 6;
@@ -121,7 +121,7 @@
             // tBName
             // 
             this.tBName.Location = new System.Drawing.Point(192, 72);
-            this.tBName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBName.Margin = new System.Windows.Forms.Padding(2);
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(452, 20);
             this.tBName.TabIndex = 7;
@@ -129,7 +129,7 @@
             // tBID
             // 
             this.tBID.Location = new System.Drawing.Point(192, 132);
-            this.tBID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBID.Margin = new System.Windows.Forms.Padding(2);
             this.tBID.Name = "tBID";
             this.tBID.Size = new System.Drawing.Size(452, 20);
             this.tBID.TabIndex = 8;
@@ -173,10 +173,11 @@
             this.Controls.Add(this.Back);
             this.Controls.Add(this.dgvMH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QLMH";
             this.Text = "Quản lý Môn học ";
             this.Load += new System.EventHandler(this.QLMH_Load);
+            this.Resize += new System.EventHandler(this.QLMH_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,7 +197,6 @@
         private System.Windows.Forms.TextBox tBID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenMHDataGridViewTextBoxColumn;
+
     }
 }
