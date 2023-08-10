@@ -11,7 +11,11 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLMH()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
+
         private MainPage mainPage = new MainPage();
         private DataTable dataTable = new DataTable(); //Tạo đối tượng bảng
         string connectionString = DatabaseConnection.Instance.ConnectionString;
