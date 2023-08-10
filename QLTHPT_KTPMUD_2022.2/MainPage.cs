@@ -17,7 +17,7 @@ namespace QLTHPT_KTPMUD_2022._2
         //QLLH qllh;
         //QLBCTK qlbctk;
         //QLMH qlmh;
-        //QLKQHT qlkqht;
+        QLKQHT qlkqht;
         //QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
         signIn signin;
@@ -58,7 +58,9 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLKQHT_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            qlkqht = new QLKQHT();
+            qlkqht.Show();
         }
 
         private void menuQLTK_Click(object sender, EventArgs e)
