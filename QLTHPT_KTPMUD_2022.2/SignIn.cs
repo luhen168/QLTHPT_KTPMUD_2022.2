@@ -32,6 +32,7 @@ namespace QLTHPT_KTPMUD_2022._2
         public signIn()
         {
             InitializeComponent();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void signIn_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             signInForm = this.Size;
             logoRec = new Rectangle(logo.Location.X, logo.Location.Y, logo.Width, logo.Height);
             tb1Rec = new Rectangle(tBUserName.Location.X, tBUserName.Location.Y, tBUserName.Width, tBUserName.Height);

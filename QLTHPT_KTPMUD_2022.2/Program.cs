@@ -18,7 +18,7 @@ namespace QLTHPT_KTPMUD_2022._2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new signIn());
             //Application.Run(new MainPage());
-            //Application.Run(new QLHS());
+            Application.Run(new QLLH());
         }
     }
 }
