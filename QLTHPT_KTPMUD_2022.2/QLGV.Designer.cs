@@ -32,6 +32,7 @@ namespace QLTHPT_KTPMUD_2022._2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLGV));
             this.tBName = new System.Windows.Forms.TextBox();
             this.tBID = new System.Windows.Forms.TextBox();
@@ -64,6 +65,10 @@ namespace QLTHPT_KTPMUD_2022._2
             this.btnBack = new System.Windows.Forms.Button();
             this.tBStartDate = new System.Windows.Forms.DateTimePicker();
             this.tBEndDate = new System.Windows.Forms.DateTimePicker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,6 +272,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.btnAddGV.Size = new System.Drawing.Size(195, 60);
             this.btnAddGV.TabIndex = 25;
             this.btnAddGV.Text = "Thêm";
+            this.toolTip2.SetToolTip(this.btnAddGV, "Thêm giáo viên");
             this.btnAddGV.UseVisualStyleBackColor = true;
             this.btnAddGV.Click += new System.EventHandler(this.btnAddGV_Click);
             // 
@@ -279,6 +285,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.btnFixGV.Size = new System.Drawing.Size(195, 60);
             this.btnFixGV.TabIndex = 26;
             this.btnFixGV.Text = "Sửa";
+            this.toolTip3.SetToolTip(this.btnFixGV, "Sửa giáo viên");
             this.btnFixGV.UseVisualStyleBackColor = true;
             this.btnFixGV.Click += new System.EventHandler(this.btnFixGV_Click);
             // 
@@ -303,6 +310,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.btnDelGV.Size = new System.Drawing.Size(195, 60);
             this.btnDelGV.TabIndex = 28;
             this.btnDelGV.Text = "Xóa";
+            this.toolTip4.SetToolTip(this.btnDelGV, "Xóa giáo viên");
             this.btnDelGV.UseVisualStyleBackColor = true;
             this.btnDelGV.Click += new System.EventHandler(this.btnDelGV_Click);
             // 
@@ -362,6 +370,8 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(815, 22);
             this.tBFind.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.tBFind, "Nhập thông tin của giáo viên cần tìm kiếm");
+            this.tBFind.TextChanged += new System.EventHandler(this.tBFind_TextChanged);
             // 
             // btnBack
             // 
@@ -443,8 +453,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.Controls.Add(this.tBName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "QLGV";
             this.Text = "Quản lý Giáo viên";
             this.Load += new System.EventHandler(this.QLGV_Load);
@@ -487,5 +495,9 @@ namespace QLTHPT_KTPMUD_2022._2
         private System.Windows.Forms.Button btnBack;
         public System.Windows.Forms.DateTimePicker tBStartDate;
         public System.Windows.Forms.DateTimePicker tBEndDate;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
     }
 }

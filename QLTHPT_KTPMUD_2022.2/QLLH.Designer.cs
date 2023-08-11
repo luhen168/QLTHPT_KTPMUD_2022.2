@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLLH));
             this.btnBack1 = new System.Windows.Forms.Button();
             this.tBFind1 = new System.Windows.Forms.TextBox();
@@ -42,6 +43,10 @@
             this.tBViTri = new System.Windows.Forms.TextBox();
             this.tBTenLop = new System.Windows.Forms.TextBox();
             this.dgvLH = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLH)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +68,7 @@
             this.tBFind1.Name = "tBFind1";
             this.tBFind1.Size = new System.Drawing.Size(815, 22);
             this.tBFind1.TabIndex = 76;
+            this.toolTip1.SetToolTip(this.tBFind1, "Nhập thông tin lớp học cần tìm kiếm");
             // 
             // btnDelLH
             // 
@@ -73,6 +79,7 @@
             this.btnDelLH.Size = new System.Drawing.Size(195, 60);
             this.btnDelLH.TabIndex = 71;
             this.btnDelLH.Text = "Xóa";
+            this.toolTip4.SetToolTip(this.btnDelLH, "Xóa lớp học");
             this.btnDelLH.UseVisualStyleBackColor = true;
             this.btnDelLH.Click += new System.EventHandler(this.btnDelLH_Click);
             // 
@@ -97,6 +104,7 @@
             this.btnFixLH.Size = new System.Drawing.Size(195, 60);
             this.btnFixLH.TabIndex = 69;
             this.btnFixLH.Text = "Sửa";
+            this.toolTip3.SetToolTip(this.btnFixLH, "Sửa lớp học");
             this.btnFixLH.UseVisualStyleBackColor = true;
             this.btnFixLH.Click += new System.EventHandler(this.btnFixLH_Click);
             // 
@@ -109,6 +117,7 @@
             this.btnAddLH.Size = new System.Drawing.Size(195, 60);
             this.btnAddLH.TabIndex = 68;
             this.btnAddLH.Text = "Thêm";
+            this.toolTip2.SetToolTip(this.btnAddLH, "Thêm lớp học");
             this.btnAddLH.UseVisualStyleBackColor = true;
             this.btnAddLH.Click += new System.EventHandler(this.btnAddLH_Click);
             // 
@@ -196,8 +205,6 @@
             this.Controls.Add(this.tBTenLop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "QLLH";
             this.Text = "Quản lý lớp học";
             this.Load += new System.EventHandler(this.QLLH_Load);
@@ -221,5 +228,9 @@
         private System.Windows.Forms.TextBox tBViTri;
         private System.Windows.Forms.TextBox tBTenLop;
         private System.Windows.Forms.DataGridView dgvLH;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
     }
 }

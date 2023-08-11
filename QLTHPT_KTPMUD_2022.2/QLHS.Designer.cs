@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLHS));
             this.btnBack = new System.Windows.Forms.Button();
             this.tBFind = new System.Windows.Forms.TextBox();
@@ -70,6 +71,10 @@
             this.tBDiemTB = new System.Windows.Forms.TextBox();
             this.cBHL = new System.Windows.Forms.ComboBox();
             this.cBHanhKiem = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +96,7 @@
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(815, 22);
             this.tBFind.TabIndex = 77;
+            this.toolTip1.SetToolTip(this.tBFind, "Nhập thông tin học sinh cần tìm kiếm");
             // 
             // label12
             // 
@@ -150,6 +156,7 @@
             this.btnDelHS.Size = new System.Drawing.Size(195, 60);
             this.btnDelHS.TabIndex = 71;
             this.btnDelHS.Text = "Xóa";
+            this.toolTip4.SetToolTip(this.btnDelHS, "Xóa học sinh");
             this.btnDelHS.UseVisualStyleBackColor = true;
             this.btnDelHS.Click += new System.EventHandler(this.btnDelHS_Click);
             // 
@@ -174,6 +181,7 @@
             this.btnFixHS.Size = new System.Drawing.Size(195, 60);
             this.btnFixHS.TabIndex = 69;
             this.btnFixHS.Text = "Sửa";
+            this.toolTip3.SetToolTip(this.btnFixHS, "Sửa thông tin học sinh");
             this.btnFixHS.UseVisualStyleBackColor = true;
             this.btnFixHS.Click += new System.EventHandler(this.btnFixHS_Click);
             // 
@@ -186,6 +194,7 @@
             this.btnAddHS.Size = new System.Drawing.Size(195, 60);
             this.btnAddHS.TabIndex = 68;
             this.btnAddHS.Text = "Thêm";
+            this.toolTip2.SetToolTip(this.btnAddHS, "Thêm học sinh");
             this.btnAddHS.UseVisualStyleBackColor = true;
             this.btnAddHS.Click += new System.EventHandler(this.btnAddHS_Click);
             // 
@@ -537,8 +546,6 @@
             this.Controls.Add(this.tBName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "QLHS";
             this.Text = "Quản lý học sinh ";
             this.Load += new System.EventHandler(this.QLHS_Load);
@@ -590,5 +597,9 @@
         private System.Windows.Forms.TextBox tBDiemTB;
         private System.Windows.Forms.ComboBox cBHL;
         private System.Windows.Forms.ComboBox cBHanhKiem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
