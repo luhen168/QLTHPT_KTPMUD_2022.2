@@ -41,7 +41,9 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLKQHT_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            qlkqht = new QLKQHT();
+            qlkqht.Show();
         }
 
         private void menuQLGV_Click(object sender, EventArgs e)
