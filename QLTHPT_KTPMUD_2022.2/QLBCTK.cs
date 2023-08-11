@@ -15,6 +15,14 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLBCTK()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
+        }
+
+        private void QLBCTK_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

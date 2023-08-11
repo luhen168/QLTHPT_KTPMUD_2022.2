@@ -75,7 +75,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBName
             // 
             this.tBName.Location = new System.Drawing.Point(175, 81);
-            this.tBName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBName.Margin = new System.Windows.Forms.Padding(4);
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(283, 22);
             this.tBName.TabIndex = 0;
@@ -83,7 +83,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBID
             // 
             this.tBID.Location = new System.Drawing.Point(175, 112);
-            this.tBID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBID.Margin = new System.Windows.Forms.Padding(4);
             this.tBID.Name = "tBID";
             this.tBID.Size = new System.Drawing.Size(283, 22);
             this.tBID.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBmaGV
             // 
             this.tBmaGV.Location = new System.Drawing.Point(175, 144);
-            this.tBmaGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBmaGV.Margin = new System.Windows.Forms.Padding(4);
             this.tBmaGV.Name = "tBmaGV";
             this.tBmaGV.Size = new System.Drawing.Size(283, 22);
             this.tBmaGV.TabIndex = 3;
@@ -179,7 +179,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBPhone
             // 
             this.tBPhone.Location = new System.Drawing.Point(643, 144);
-            this.tBPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tBPhone.Name = "tBPhone";
             this.tBPhone.Size = new System.Drawing.Size(283, 22);
             this.tBPhone.TabIndex = 14;
@@ -187,7 +187,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBAddress
             // 
             this.tBAddress.Location = new System.Drawing.Point(643, 176);
-            this.tBAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBAddress.Margin = new System.Windows.Forms.Padding(4);
             this.tBAddress.Name = "tBAddress";
             this.tBAddress.Size = new System.Drawing.Size(283, 22);
             this.tBAddress.TabIndex = 15;
@@ -195,7 +195,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBCCCD
             // 
             this.tBCCCD.Location = new System.Drawing.Point(643, 81);
-            this.tBCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.tBCCCD.Name = "tBCCCD";
             this.tBCCCD.Size = new System.Drawing.Size(283, 22);
             this.tBCCCD.TabIndex = 16;
@@ -217,7 +217,7 @@ namespace QLTHPT_KTPMUD_2022._2
             "Thể chất",
             "Văn "});
             this.cBMH.Location = new System.Drawing.Point(175, 176);
-            this.cBMH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBMH.Margin = new System.Windows.Forms.Padding(4);
             this.cBMH.Name = "cBMH";
             this.cBMH.Size = new System.Drawing.Size(283, 24);
             this.cBMH.Sorted = true;
@@ -232,7 +232,7 @@ namespace QLTHPT_KTPMUD_2022._2
             "Nam",
             "Nữ"});
             this.cBSex.Location = new System.Drawing.Point(175, 209);
-            this.cBSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBSex.Margin = new System.Windows.Forms.Padding(4);
             this.cBSex.Name = "cBSex";
             this.cBSex.Size = new System.Drawing.Size(283, 24);
             this.cBSex.Sorted = true;
@@ -253,7 +253,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBdateGV.CustomFormat = " ";
             this.tBdateGV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tBdateGV.Location = new System.Drawing.Point(643, 112);
-            this.tBdateGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBdateGV.Margin = new System.Windows.Forms.Padding(4);
             this.tBdateGV.Name = "tBdateGV";
             this.tBdateGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBdateGV.Size = new System.Drawing.Size(283, 22);
@@ -267,7 +267,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.btnAddGV.AutoSize = true;
             this.btnAddGV.Location = new System.Drawing.Point(959, 107);
-            this.btnAddGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddGV.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddGV.Name = "btnAddGV";
             this.btnAddGV.Size = new System.Drawing.Size(195, 60);
             this.btnAddGV.TabIndex = 25;
@@ -280,7 +280,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.btnFixGV.AutoSize = true;
             this.btnFixGV.Location = new System.Drawing.Point(959, 175);
-            this.btnFixGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFixGV.Margin = new System.Windows.Forms.Padding(4);
             this.btnFixGV.Name = "btnFixGV";
             this.btnFixGV.Size = new System.Drawing.Size(195, 60);
             this.btnFixGV.TabIndex = 26;
@@ -293,7 +293,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.btnFindGV.AutoSize = true;
             this.btnFindGV.Location = new System.Drawing.Point(999, 30);
-            this.btnFindGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindGV.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindGV.Name = "btnFindGV";
             this.btnFindGV.Size = new System.Drawing.Size(121, 43);
             this.btnFindGV.TabIndex = 27;
@@ -305,7 +305,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.btnDelGV.AutoSize = true;
             this.btnDelGV.Location = new System.Drawing.Point(959, 242);
-            this.btnDelGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelGV.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelGV.Name = "btnDelGV";
             this.btnDelGV.Size = new System.Drawing.Size(195, 60);
             this.btnDelGV.TabIndex = 28;
@@ -318,7 +318,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // 
             this.dgvGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGV.Location = new System.Drawing.Point(87, 310);
-            this.dgvGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGV.Name = "dgvGV";
             this.dgvGV.RowHeadersWidth = 51;
             this.dgvGV.Size = new System.Drawing.Size(1067, 276);
@@ -328,7 +328,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBEmail
             // 
             this.tBEmail.Location = new System.Drawing.Point(175, 242);
-            this.tBEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tBEmail.Name = "tBEmail";
             this.tBEmail.Size = new System.Drawing.Size(283, 22);
             this.tBEmail.TabIndex = 36;
@@ -366,7 +366,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // tBFind
             // 
             this.tBFind.Location = new System.Drawing.Point(175, 39);
-            this.tBFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBFind.Margin = new System.Windows.Forms.Padding(4);
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(815, 22);
             this.tBFind.TabIndex = 44;
@@ -376,7 +376,7 @@ namespace QLTHPT_KTPMUD_2022._2
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(12, 4);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 48);
             this.btnBack.TabIndex = 45;
@@ -389,7 +389,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBStartDate.CustomFormat = " ";
             this.tBStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tBStartDate.Location = new System.Drawing.Point(643, 210);
-            this.tBStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.tBStartDate.Name = "tBStartDate";
             this.tBStartDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBStartDate.Size = new System.Drawing.Size(283, 22);
@@ -404,7 +404,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.tBEndDate.CustomFormat = " ";
             this.tBEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tBEndDate.Location = new System.Drawing.Point(643, 242);
-            this.tBEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.tBEndDate.Name = "tBEndDate";
             this.tBEndDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBEndDate.Size = new System.Drawing.Size(283, 22);
@@ -452,7 +452,9 @@ namespace QLTHPT_KTPMUD_2022._2
             this.Controls.Add(this.tBID);
             this.Controls.Add(this.tBName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QLGV";
             this.Text = "Quản lý Giáo viên";
             this.Load += new System.EventHandler(this.QLGV_Load);

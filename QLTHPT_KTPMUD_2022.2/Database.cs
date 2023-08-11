@@ -15,7 +15,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private DatabaseConnection()
         {
 
-            connectionString = "Data Source=DESKTOP-96D4EUK\\SQLEXPRESS;Initial Catalog=QLTHPT_20222;Integrated Security=True";
+            connectionString = "Data Source=DESKTOP-K4OTG6Q\\MSQLL;Initial Catalog=qlthpt;Integrated Security=True";
 
         }
         public static DatabaseConnection Instance

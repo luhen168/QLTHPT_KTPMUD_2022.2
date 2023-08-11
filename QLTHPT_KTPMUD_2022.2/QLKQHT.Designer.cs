@@ -433,6 +433,8 @@
             this.Controls.Add(this.tBHocKy);
             this.Controls.Add(this.tBID);
             this.Controls.Add(this.tBName);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QLKQHT";
             this.Text = "Quản lý kết quả học tập";
             this.Load += new System.EventHandler(this.QLKQHT_Load);
