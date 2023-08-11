@@ -1,20 +1,28 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Net;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 
 namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class QLMH : Form
-    {
-        public QLMH()
-        {
-            InitializeComponent();
-        }
+    {       
+        
         private MainPage mainPage = new MainPage();
         private DataTable dataTable = new DataTable(); //Tạo đối tượng bảng
         string connectionString = DatabaseConnection.Instance.ConnectionString;
+        public QLMH()
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
+        }
+       
         private void Back_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -22,8 +30,11 @@ namespace QLTHPT_KTPMUD_2022._2
         }
         private void QLMH_Load(object sender, EventArgs e)
         {
+           
             LoadData();
         }
+
+       
         private void Find_Click(object sender, EventArgs e)
         {
             string search = tBFind.Text;
@@ -93,7 +104,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM MH WHERE MaMH = @MaMH"; 
+                    string query = "DELETE FROM MH WHERE MaMH = @MaMH";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
@@ -164,5 +175,6 @@ namespace QLTHPT_KTPMUD_2022._2
                 ClearData();
             }
         }
+
     }
 }

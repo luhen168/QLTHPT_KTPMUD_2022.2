@@ -60,7 +60,7 @@
             this.Back.Location = new System.Drawing.Point(9, 10);
             this.Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(81, 34);
+            this.Back.Size = new System.Drawing.Size(108, 42);
             this.Back.TabIndex = 1;
             this.Back.Text = "Quay lại";
             this.Back.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.btnAdd.Location = new System.Drawing.Point(662, 55);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(86, 35);
+            this.btnAdd.Size = new System.Drawing.Size(115, 43);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(662, 102);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(86, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 43);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.btnDelete.Location = new System.Drawing.Point(662, 154);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(86, 35);
+            this.btnDelete.Size = new System.Drawing.Size(115, 43);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.tBFind.Location = new System.Drawing.Point(192, 17);
             this.tBFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBFind.Name = "tBFind";
-            this.tBFind.Size = new System.Drawing.Size(452, 20);
+            this.tBFind.Size = new System.Drawing.Size(601, 22);
             this.tBFind.TabIndex = 5;
             // 
             // btnFind
@@ -112,7 +112,7 @@
             this.btnFind.Location = new System.Drawing.Point(662, 10);
             this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(86, 35);
+            this.btnFind.Size = new System.Drawing.Size(115, 43);
             this.btnFind.TabIndex = 6;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.label1.Location = new System.Drawing.Point(98, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tên Môn học";
             // 
@@ -152,13 +152,13 @@
             this.label2.Location = new System.Drawing.Point(102, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Mã Môn học";
             // 
             // QLMH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 497);
             this.Controls.Add(this.label2);
@@ -176,7 +176,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "QLMH";
             this.Text = "Quản lý Môn học ";
-            this.Load += new System.EventHandler(this.QLMH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,7 +195,6 @@
         private System.Windows.Forms.TextBox tBID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenMHDataGridViewTextBoxColumn;
+
     }
 }

@@ -14,41 +14,24 @@ namespace QLTHPT_KTPMUD_2022._2
     {
         QLGV qlgv;
         QLHS qlhs;
-        //QLLH qllh;
-        //QLBCTK qlbctk;
-        //QLMH qlmh;
+        QLLH qllh;
+        QLBCTK qlbctk;
+        QLMH qlmh;
         QLKQHT qlkqht;
-        //QLTK qltk;
+        QLTK qltk;
         string connectionString = DatabaseConnection.Instance.ConnectionString;
         signIn signin;
         public MainPage()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
 
         private void MainPage_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -61,21 +44,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.Hide();
             qlkqht = new QLKQHT();
             qlkqht.Show();
-        }
-
-        private void menuQLTK_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void menuQLGV_Click(object sender, EventArgs e)
@@ -94,24 +62,17 @@ namespace QLTHPT_KTPMUD_2022._2
 
         private void menuQLLH_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            qllh = new QLLH();
+            qllh.Show();
         }
 
-        private void delGV_Click(object sender, EventArgs e)
+        private void menuQLMH_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            qlmh = new QLMH();
+            qlmh.Show();
         }
-
-        private void fixGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         //Hàm xử lí Đăng xuất 
         private void signOut_Click(object sender, EventArgs e)
@@ -124,6 +85,38 @@ namespace QLTHPT_KTPMUD_2022._2
                 signin = new signIn(); //tạo 1 đối tượng để quay lại màn hình đăng nhập
                 signin.Show(); //sử dụng phương thức Show hiển thị ra màn hình đăng nhập
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if(openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK) 
+            {
+                this.textBox1.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = this.textBox1.Text;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
     }
 }

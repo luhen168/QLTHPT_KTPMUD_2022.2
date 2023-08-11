@@ -14,169 +14,20 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class QLHS : Form
     {
-        private Rectangle tBNameOriginalRect;
-        private Rectangle tBIDOriginalRect;
-        private Rectangle tBMaHSOriginalRect;
-        private Rectangle tBNienKhoaOriginalRect;
-        private Rectangle cBSexOriginalRect;
-        private Rectangle tBCCCDOriginalRect;
-        private Rectangle tBdateHSOriginalRect;
-        private Rectangle tBPhoneOriginalRect;
-        private Rectangle tBAddressOriginalRect;
-        private Rectangle tBEmailOriginalRect;
-        private Rectangle tBPHOriginalRect;
-        private Rectangle cBHLOriginalRect;
-        private Rectangle cBHanhKiemOriginalRect;
-        private Rectangle tBHocPhiOriginalRect;
-        private Rectangle tBClassOriginalRect;
-        private Rectangle tBHocKyOriginalRect;
-        private Rectangle tBDiemTBOriginalRect;
-        private Rectangle tBFindOriginalRect;
-        private Rectangle btnAddHSOriginalRect;
-        private Rectangle btnFixHSOriginalRect;
-        private Rectangle btnFindHSOriginalRect;
-        private Rectangle btnDelHSOriginalRect;
-        private Rectangle btnBackOriginalRect;
-        private Rectangle label1OriginalRect;
-        private Rectangle label2OriginalRect;
-        private Rectangle label3OriginalRect;
-        private Rectangle label4OriginalRect;
-        private Rectangle label5OriginalRect;
-        private Rectangle label6OriginalRect;
-        private Rectangle label7OriginalRect;
-        private Rectangle label8OriginalRect;
-        private Rectangle label9OriginalRect;
-        private Rectangle label10OriginalRect;
-        private Rectangle label11OriginalRect;
-        private Rectangle label12OriginalRect;
-        private Rectangle label13OriginalRect;
-        private Rectangle label14OriginalRect;
-        private Rectangle label15OriginalRect;
-        private Rectangle label16OriginalRect;
-        private Rectangle label17OriginalRect;
-        private Rectangle dgvHSOriginalRect;
-        private Size QLHSOriginalSize;
         private DataTable dataTable = new DataTable(); //Tạo đối tượng bảng
         private MainPage mainPage = new MainPage(); //Tạo 1 đối tượng trang chủ thừa kế các method hoặc thuộc tính của lớp
         string connectionString = DatabaseConnection.Instance.ConnectionString;
         public QLHS()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
 
         private void QLHS_Load(object sender, EventArgs e)
         {
-            QLHSOriginalSize = this.Size;
-            tBNameOriginalRect = new Rectangle(tBName.Location.X, tBName.Location.Y, tBName.Width, tBName.Height);
-            tBIDOriginalRect = new Rectangle(tBID.Location.X, tBID.Location.Y, tBID.Width, tBID.Height);
-            tBMaHSOriginalRect = new Rectangle(tBmaHS.Location.X, tBmaHS.Location.Y, tBmaHS.Width, tBmaHS.Height);
-            tBAddressOriginalRect = new Rectangle(tBAddress.Location.X, tBAddress.Location.Y, tBAddress.Width, tBAddress.Height);
-            tBPhoneOriginalRect = new Rectangle(tBPhone.Location.X, tBPhone.Location.Y, tBPhone.Width, tBPhone.Height);
-            tBCCCDOriginalRect = new Rectangle(tBCCCD.Location.X, tBCCCD.Location.Y, tBCCCD.Width, tBCCCD.Height);
-            tBdateHSOriginalRect = new Rectangle(tBdateHS.Location.X, tBdateHS.Location.Y, tBdateHS.Width, tBdateHS.Height);
-            tBEmailOriginalRect = new Rectangle(tBEmail.Location.X, tBEmail.Location.Y, tBEmail.Width, tBEmail.Height);
-            tBPHOriginalRect = new Rectangle(tBPH.Location.X, tBPH.Location.Y, tBPH.Width, tBPH.Height);
-            cBHLOriginalRect = new Rectangle(cBHL.Location.X, cBHL.Location.Y, cBHL.Width, cBHL.Height);
-            tBFindOriginalRect = new Rectangle(tBFind.Location.X, tBFind.Location.Y, tBFind.Width, tBFind.Height);
-            cBHanhKiemOriginalRect = new Rectangle(cBHanhKiem.Location.X, cBHanhKiem.Location.Y, cBHanhKiem.Width, cBHanhKiem.Height);
-            tBHocPhiOriginalRect = new Rectangle(tBHocPhi.Location.X, tBHocPhi.Location.Y, tBHocPhi.Width, tBHocPhi.Height);
-            tBClassOriginalRect = new Rectangle(tBClass.Location.X, tBClass.Location.Y, tBClass.Width, tBClass.Height);
-            tBHocKyOriginalRect = new Rectangle(tBHocKy.Location.X, tBHocKy.Location.Y, tBHocKy.Width, tBHocKy.Height);
-            tBDiemTBOriginalRect = new Rectangle(tBDiemTB.Location.X, tBDiemTB.Location.Y, tBDiemTB.Width, tBDiemTB.Height);
-            tBNienKhoaOriginalRect = new Rectangle(tBNienKhoa.Location.X, tBNienKhoa.Location.Y, tBNienKhoa.Width, tBNienKhoa.Height);
-            cBSexOriginalRect = new Rectangle(cBSex.Location.X, cBSex.Location.Y, cBSex.Width, cBSex.Height);
-            label1OriginalRect = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
-            label2OriginalRect = new Rectangle(label2.Location.X, label2.Location.Y, label2.Width, label2.Height);
-            label3OriginalRect = new Rectangle(label3.Location.X, label3.Location.Y, label3.Width, label3.Height);
-            label4OriginalRect = new Rectangle(label4.Location.X, label4.Location.Y, label4.Width, label4.Height);
-            label5OriginalRect = new Rectangle(label5.Location.X, label5.Location.Y, label5.Width, label5.Height);
-            label6OriginalRect = new Rectangle(label6.Location.X, label6.Location.Y, label6.Width, label6.Height);
-            label7OriginalRect = new Rectangle(label7.Location.X, label7.Location.Y, label7.Width, label7.Height);
-            label8OriginalRect = new Rectangle(label8.Location.X, label8.Location.Y, label8.Width, label8.Height);
-            label9OriginalRect = new Rectangle(label9.Location.X, label9.Location.Y, label9.Width, label9.Height);
-            label10OriginalRect = new Rectangle(label10.Location.X, label10.Location.Y, label10.Width, label10.Height);
-            label11OriginalRect = new Rectangle(label11.Location.X, label11.Location.Y, label11.Width, label11.Height);
-            label12OriginalRect = new Rectangle(label12.Location.X, label12.Location.Y, label12.Width, label12.Height);
-            label13OriginalRect = new Rectangle(label13.Location.X, label13.Location.Y, label13.Width, label13.Height);
-            label14OriginalRect = new Rectangle(label14.Location.X, label14.Location.Y, label14.Width, label14.Height);
-            label15OriginalRect = new Rectangle(label15.Location.X, label15.Location.Y, label15.Width, label15.Height);
-            label16OriginalRect = new Rectangle(label16.Location.X, label16.Location.Y, label16.Width, label16.Height);
-            label17OriginalRect = new Rectangle(label17.Location.X, label17.Location.Y, label17.Width, label17.Height);
-            btnAddHSOriginalRect = new Rectangle(btnAddHS.Location.X, btnAddHS.Location.Y, btnAddHS.Width, btnAddHS.Height);
-            btnFixHSOriginalRect = new Rectangle(btnFixHS.Location.X, btnFixHS.Location.Y, btnFixHS.Width, btnFixHS.Height);
-            btnFindHSOriginalRect = new Rectangle(btnFindHS.Location.X, btnFindHS.Location.Y, btnFindHS.Width, btnFindHS.Height);
-            btnDelHSOriginalRect = new Rectangle(btnDelHS.Location.X, btnDelHS.Location.Y, btnDelHS.Width, btnDelHS.Height);
-            btnBackOriginalRect = new Rectangle(btnBack.Location.X, btnBack.Location.Y, btnBack.Width, btnBack.Height);
-            dgvHSOriginalRect = new Rectangle(dgvHS.Location.X, dgvHS.Location.Y, dgvHS.Width, dgvHS.Height);
             LoadData();
-        }
-        //Hàm thay đổi kích thước các control cho phù hợp với kích thước form 
-        private void resizeChildrenControls()
-        {
-            resizeControl(tBNameOriginalRect, tBName);
-            resizeControl(tBMaHSOriginalRect, tBmaHS);
-            resizeControl(tBIDOriginalRect, tBID);
-            resizeControl(cBSexOriginalRect, cBSex);
-            resizeControl(tBPHOriginalRect, tBPH);
-            resizeControl(tBNienKhoaOriginalRect, tBNienKhoa);
-            resizeControl(cBHanhKiemOriginalRect, cBHanhKiem);
-            resizeControl(cBHLOriginalRect, cBHL);
-            resizeControl(tBAddressOriginalRect, tBAddress);
-            resizeControl(tBPhoneOriginalRect, tBPhone);
-            resizeControl(tBHocPhiOriginalRect, tBHocPhi);
-            resizeControl(tBdateHSOriginalRect, tBdateHS);
-            resizeControl(tBCCCDOriginalRect, tBCCCD);
-            resizeControl(tBEmailOriginalRect, tBEmail);
-            resizeControl(tBClassOriginalRect, tBClass);
-            resizeControl(tBHocKyOriginalRect, tBHocKy);
-            resizeControl(tBDiemTBOriginalRect, tBDiemTB);
-            resizeControl(tBFindOriginalRect, tBFind);
-            resizeControl(btnAddHSOriginalRect, btnAddHS);
-            resizeControl(btnFixHSOriginalRect, btnFixHS);
-            resizeControl(btnDelHSOriginalRect, btnDelHS);
-            resizeControl(btnFindHSOriginalRect, btnFindHS);
-            resizeControl(btnBackOriginalRect, btnBack);
-            resizeControl(label1OriginalRect, label1);
-            resizeControl(label2OriginalRect, label2);
-            resizeControl(label3OriginalRect, label3);
-            resizeControl(label4OriginalRect, label4);
-            resizeControl(label5OriginalRect, label5);
-            resizeControl(label6OriginalRect, label6);
-            resizeControl(label7OriginalRect, label7);
-            resizeControl(label8OriginalRect, label8);
-            resizeControl(label9OriginalRect, label9);
-            resizeControl(label10OriginalRect, label10);
-            resizeControl(label11OriginalRect, label11);
-            resizeControl(label12OriginalRect, label12);
-            resizeControl(label13OriginalRect, label13);
-            resizeControl(label14OriginalRect, label14);
-            resizeControl(label15OriginalRect, label15);
-            resizeControl(label16OriginalRect, label16);
-            resizeControl(label17OriginalRect, label17);
-            resizeControl(dgvHSOriginalRect, dgvHS);
-        }
-
-        //Hàm sử dụng để kiểm soát việc thay đổi kích thước lưu kích thước ban đầu và kích thước hiện tại 
-        private void resizeControl(Rectangle OriginalControlRect, Control control)
-        {
-            float xRatio = (float)(this.Width) / (float)(QLHSOriginalSize.Width);
-            float yRatio = (float)(this.Height) / (float)(QLHSOriginalSize.Height);
-
-
-            int newX = (int)(OriginalControlRect.X * xRatio);
-            int newY = (int)(OriginalControlRect.Y * yRatio);
-
-            int newWidth = (int)(OriginalControlRect.Width * xRatio);
-            int newHeight = (int)(OriginalControlRect.Height * yRatio);
-
-            control.Location = new Point(newX, newY);
-            control.Size = new Size(newWidth, newHeight);
-        }
-
-        //Sự kiện thay đổi kích thước
-        private void QLHS_Resize(object sender, EventArgs e)
-        {
-            resizeChildrenControls();
         }
 
         //Thực hiện quay lại mà hình chính
@@ -307,7 +158,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);
             }
         }
-
+         
         //Thực hiện sửa dữ liệu trong SQL
         private void btnFixHS_Click(object sender, EventArgs e)
         {
@@ -433,6 +284,5 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             tBdateHS.CustomFormat = "dd/MM/yyyy";
         }
-
     }
 }

@@ -17,21 +17,16 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class signIn : Form
     {
-        private Rectangle labeltitleRec;
-        private Rectangle logoRec;
-        private Rectangle tb1Rec;
-        private Rectangle tb2Rec;
-        private Rectangle labelNameRec;
-        private Rectangle labelPassRec;
-        private Rectangle checkBox1Rec;
-        private Rectangle btnSignInRec;
-        private Size signInForm;
         MainPage mainpage; //Tạo 1 đối tượng và 1 
         SqlConnection conn;
         SqlCommand cmd;
         public signIn()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 800;   // Thiết lập chiều rộng
+            this.Height = 600;  // Thiết lập chiều cao
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,55 +78,7 @@ namespace QLTHPT_KTPMUD_2022._2
 
         }
 
-        private void signIn_Load(object sender, EventArgs e)
-        {
-            signInForm = this.Size;
-            logoRec = new Rectangle(logo.Location.X, logo.Location.Y, logo.Width, logo.Height);
-            tb1Rec = new Rectangle(tBUserName.Location.X, tBUserName.Location.Y, tBUserName.Width, tBUserName.Height);
-            tb2Rec = new Rectangle(tBPass.Location.X, tBPass.Location.Y, tBPass.Width, tBPass.Height);
-            labelNameRec = new Rectangle(labelUserName.Location.X, labelUserName.Location.Y, labelUserName.Width, labelUserName.Height);
-            labelPassRec = new Rectangle(labelPass.Location.X, labelPass.Location.Y, labelPass.Width, labelPass.Height);
-            checkBox1Rec = new Rectangle(cBPass.Location.X, cBPass.Location.Y, cBPass.Width, cBPass.Height);
-            btnSignInRec = new Rectangle(btnSignIn.Location.X, btnSignIn.Location.Y, btnSignIn.Width, btnSignIn.Height);
-            labeltitleRec = new Rectangle(label2.Location.X, label2.Location.Y, label2.Width, label2.Height);
 
-        }
-
-        private void resizeChildrenControls()
-        {
-            resizeControl(labeltitleRec, label2);
-            resizeControl(logoRec, logo);
-            resizeControl(btnSignInRec, btnSignIn);
-            resizeControl(tb1Rec, tBUserName);
-            resizeControl(tb2Rec, tBPass);
-            resizeControl(labelNameRec, labelUserName);
-            resizeControl(labelPassRec, labelPass); 
-            resizeControl(checkBox1Rec, cBPass);
-
-        }
-
-        //Hàm sử dụng để kiểm soát việc thay đổi kích thước lưu kích thước ban đầu và kích thước hiện tại 
-        private void resizeControl(Rectangle OriginalControlRect, Control control)
-        {
-            float xRatio = (float)(this.Width) / (float)(signInForm.Width);
-            float yRatio = (float)(this.Height) / (float)(signInForm.Height);
-
-
-            int newX = (int)(OriginalControlRect.X * xRatio);
-            int newY = (int)(OriginalControlRect.Y * yRatio);
-
-            int newWidth = (int)(OriginalControlRect.Width * xRatio);
-            int newHeight = (int)(OriginalControlRect.Height * yRatio);
-
-            control.Location = new Point(newX, newY);
-            control.Size = new Size(newWidth, newHeight);
-        }
-
-        //Hàm thực hiện sự kiện thay đổi 
-        private void signIn_Resize(object sender, EventArgs e)
-        {
-            resizeChildrenControls();
-        }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
@@ -148,6 +95,11 @@ namespace QLTHPT_KTPMUD_2022._2
             { 
                 tBPass.UseSystemPasswordChar = true; 
             }
+        }
+
+        private void signIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
