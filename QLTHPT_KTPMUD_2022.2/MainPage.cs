@@ -24,7 +24,9 @@ namespace QLTHPT_KTPMUD_2022._2
         public MainPage()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
 
         private void MainPage_Load(object sender, EventArgs e)

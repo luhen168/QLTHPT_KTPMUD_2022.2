@@ -456,7 +456,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.Name = "QLGV";
             this.Text = "Quản lý Giáo viên";
             this.Load += new System.EventHandler(this.QLGV_Load);
-            this.Resize += new System.EventHandler(this.QLGV_Resize_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

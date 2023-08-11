@@ -549,7 +549,6 @@
             this.Name = "QLHS";
             this.Text = "Quản lý học sinh ";
             this.Load += new System.EventHandler(this.QLHS_Load);
-            this.Resize += new System.EventHandler(this.QLHS_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

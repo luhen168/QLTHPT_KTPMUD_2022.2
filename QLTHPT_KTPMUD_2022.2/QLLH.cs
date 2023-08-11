@@ -33,6 +33,9 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLLH()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
 
         private void btnBack_Click(object sender, EventArgs e)
