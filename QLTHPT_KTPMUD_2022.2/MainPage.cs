@@ -118,5 +118,12 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
+
+        private void menuQLTK_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            qltk = new QLTK();
+            qltk.Show();
+        }
     }
 }
