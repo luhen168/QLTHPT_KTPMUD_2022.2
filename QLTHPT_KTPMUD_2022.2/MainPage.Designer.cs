@@ -41,12 +41,12 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuQLHS = new System.Windows.Forms.ToolStripMenuItem();
             this.signOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuQLTK.Name = "menuQLTK";
             this.menuQLTK.Size = new System.Drawing.Size(139, 24);
             this.menuQLTK.Text = "Quản lý Tài khoản";
+            this.menuQLTK.Click += new System.EventHandler(this.menuQLTK_Click);
             // 
             // menuStrip1
             // 
@@ -123,16 +124,6 @@ namespace QLTHPT_KTPMUD_2022._2
             this.signOut.Size = new System.Drawing.Size(91, 24);
             this.signOut.Text = "Đăng xuất";
             this.signOut.Click += new System.EventHandler(this.signOut_Click);
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(332, 106);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(745, 417);
-            this.axWindowsMediaPlayer1.TabIndex = 10;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // button1
             // 
@@ -181,6 +172,16 @@ namespace QLTHPT_KTPMUD_2022._2
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(332, 106);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(745, 417);
+            this.axWindowsMediaPlayer1.TabIndex = 10;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,18 +189,16 @@ namespace QLTHPT_KTPMUD_2022._2
             this.BackgroundImage = global::QLTHPT_KTPMUD_2022._2.Properties.Resources.background_inside;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1505, 570);
-
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
-
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainPage";
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.MainPage_Load);
