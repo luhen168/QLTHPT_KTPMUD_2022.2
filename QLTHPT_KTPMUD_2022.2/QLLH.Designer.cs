@@ -53,7 +53,7 @@
             // btnBack1
             // 
             this.btnBack1.Location = new System.Drawing.Point(9, 7);
-            this.btnBack1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack1.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack1.Name = "btnBack1";
             this.btnBack1.Size = new System.Drawing.Size(120, 48);
             this.btnBack1.TabIndex = 77;
@@ -64,7 +64,7 @@
             // tBFind1
             // 
             this.tBFind1.Location = new System.Drawing.Point(172, 42);
-            this.tBFind1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBFind1.Margin = new System.Windows.Forms.Padding(4);
             this.tBFind1.Name = "tBFind1";
             this.tBFind1.Size = new System.Drawing.Size(815, 22);
             this.tBFind1.TabIndex = 76;
@@ -74,7 +74,7 @@
             // 
             this.btnDelLH.AutoSize = true;
             this.btnDelLH.Location = new System.Drawing.Point(956, 245);
-            this.btnDelLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelLH.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelLH.Name = "btnDelLH";
             this.btnDelLH.Size = new System.Drawing.Size(195, 60);
             this.btnDelLH.TabIndex = 71;
@@ -87,7 +87,7 @@
             // 
             this.btnFindLH.AutoSize = true;
             this.btnFindLH.Location = new System.Drawing.Point(996, 33);
-            this.btnFindLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindLH.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindLH.Name = "btnFindLH";
             this.btnFindLH.Size = new System.Drawing.Size(121, 43);
             this.btnFindLH.TabIndex = 70;
@@ -99,7 +99,7 @@
             // 
             this.btnFixLH.AutoSize = true;
             this.btnFixLH.Location = new System.Drawing.Point(956, 178);
-            this.btnFixLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFixLH.Margin = new System.Windows.Forms.Padding(4);
             this.btnFixLH.Name = "btnFixLH";
             this.btnFixLH.Size = new System.Drawing.Size(195, 60);
             this.btnFixLH.TabIndex = 69;
@@ -112,7 +112,7 @@
             // 
             this.btnAddLH.AutoSize = true;
             this.btnAddLH.Location = new System.Drawing.Point(956, 110);
-            this.btnAddLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddLH.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddLH.Name = "btnAddLH";
             this.btnAddLH.Size = new System.Drawing.Size(195, 60);
             this.btnAddLH.TabIndex = 68;
@@ -154,7 +154,7 @@
             // tBSiSo
             // 
             this.tBSiSo.Location = new System.Drawing.Point(643, 197);
-            this.tBSiSo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBSiSo.Margin = new System.Windows.Forms.Padding(4);
             this.tBSiSo.Name = "tBSiSo";
             this.tBSiSo.Size = new System.Drawing.Size(283, 22);
             this.tBSiSo.TabIndex = 52;
@@ -162,7 +162,7 @@
             // tBViTri
             // 
             this.tBViTri.Location = new System.Drawing.Point(643, 151);
-            this.tBViTri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBViTri.Margin = new System.Windows.Forms.Padding(4);
             this.tBViTri.Name = "tBViTri";
             this.tBViTri.Size = new System.Drawing.Size(283, 22);
             this.tBViTri.TabIndex = 51;
@@ -170,7 +170,7 @@
             // tBTenLop
             // 
             this.tBTenLop.Location = new System.Drawing.Point(643, 110);
-            this.tBTenLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBTenLop.Margin = new System.Windows.Forms.Padding(4);
             this.tBTenLop.Name = "tBTenLop";
             this.tBTenLop.Size = new System.Drawing.Size(283, 22);
             this.tBTenLop.TabIndex = 50;
@@ -179,7 +179,7 @@
             // 
             this.dgvLH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLH.Location = new System.Drawing.Point(13, 71);
-            this.dgvLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLH.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLH.Name = "dgvLH";
             this.dgvLH.RowHeadersWidth = 51;
             this.dgvLH.Size = new System.Drawing.Size(561, 263);
@@ -205,6 +205,8 @@
             this.Controls.Add(this.tBTenLop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QLLH";
             this.Text = "Quản lý lớp học";
             this.Load += new System.EventHandler(this.QLLH_Load);

@@ -121,6 +121,9 @@
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QLBCTK.resx">
+      <DependentUpon>QLBCTK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLGV.resx">
       <DependentUpon>QLGV.cs</DependentUpon>
     </EmbeddedResource>

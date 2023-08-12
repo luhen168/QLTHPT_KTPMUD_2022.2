@@ -81,7 +81,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(5, 7);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 48);
             this.btnBack.TabIndex = 78;
@@ -92,7 +92,7 @@
             // tBFind
             // 
             this.tBFind.Location = new System.Drawing.Point(156, 20);
-            this.tBFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBFind.Margin = new System.Windows.Forms.Padding(4);
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(815, 22);
             this.tBFind.TabIndex = 77;
@@ -131,7 +131,7 @@
             // tBEmail
             // 
             this.tBEmail.Location = new System.Drawing.Point(169, 236);
-            this.tBEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tBEmail.Name = "tBEmail";
             this.tBEmail.Size = new System.Drawing.Size(283, 22);
             this.tBEmail.TabIndex = 73;
@@ -140,7 +140,7 @@
             // 
             this.dgvHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHS.Location = new System.Drawing.Point(87, 374);
-            this.dgvHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvHS.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHS.Name = "dgvHS";
             this.dgvHS.RowHeadersWidth = 51;
             this.dgvHS.Size = new System.Drawing.Size(1067, 288);
@@ -151,7 +151,7 @@
             // 
             this.btnDelHS.AutoSize = true;
             this.btnDelHS.Location = new System.Drawing.Point(952, 246);
-            this.btnDelHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelHS.Name = "btnDelHS";
             this.btnDelHS.Size = new System.Drawing.Size(195, 60);
             this.btnDelHS.TabIndex = 71;
@@ -164,7 +164,7 @@
             // 
             this.btnFindHS.AutoSize = true;
             this.btnFindHS.Location = new System.Drawing.Point(992, 10);
-            this.btnFindHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindHS.Name = "btnFindHS";
             this.btnFindHS.Size = new System.Drawing.Size(121, 43);
             this.btnFindHS.TabIndex = 70;
@@ -176,7 +176,7 @@
             // 
             this.btnFixHS.AutoSize = true;
             this.btnFixHS.Location = new System.Drawing.Point(952, 161);
-            this.btnFixHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFixHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnFixHS.Name = "btnFixHS";
             this.btnFixHS.Size = new System.Drawing.Size(195, 60);
             this.btnFixHS.TabIndex = 69;
@@ -189,7 +189,7 @@
             // 
             this.btnAddHS.AutoSize = true;
             this.btnAddHS.Location = new System.Drawing.Point(952, 82);
-            this.btnAddHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddHS.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddHS.Name = "btnAddHS";
             this.btnAddHS.Size = new System.Drawing.Size(195, 60);
             this.btnAddHS.TabIndex = 68;
@@ -203,7 +203,7 @@
             this.tBdateHS.CustomFormat = " ";
             this.tBdateHS.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.tBdateHS.Location = new System.Drawing.Point(637, 114);
-            this.tBdateHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBdateHS.Margin = new System.Windows.Forms.Padding(4);
             this.tBdateHS.Name = "tBdateHS";
             this.tBdateHS.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tBdateHS.Size = new System.Drawing.Size(283, 22);
@@ -231,7 +231,7 @@
             "Nam",
             "Nữ"});
             this.cBSex.Location = new System.Drawing.Point(169, 206);
-            this.cBSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBSex.Margin = new System.Windows.Forms.Padding(4);
             this.cBSex.Name = "cBSex";
             this.cBSex.Size = new System.Drawing.Size(283, 24);
             this.cBSex.Sorted = true;
@@ -240,7 +240,7 @@
             // tBCCCD
             // 
             this.tBCCCD.Location = new System.Drawing.Point(637, 82);
-            this.tBCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.tBCCCD.Name = "tBCCCD";
             this.tBCCCD.Size = new System.Drawing.Size(283, 22);
             this.tBCCCD.TabIndex = 63;
@@ -248,7 +248,7 @@
             // tBAddress
             // 
             this.tBAddress.Location = new System.Drawing.Point(637, 178);
-            this.tBAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBAddress.Margin = new System.Windows.Forms.Padding(4);
             this.tBAddress.Name = "tBAddress";
             this.tBAddress.Size = new System.Drawing.Size(283, 22);
             this.tBAddress.TabIndex = 62;
@@ -256,7 +256,7 @@
             // tBPhone
             // 
             this.tBPhone.Location = new System.Drawing.Point(637, 146);
-            this.tBPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tBPhone.Name = "tBPhone";
             this.tBPhone.Size = new System.Drawing.Size(283, 22);
             this.tBPhone.TabIndex = 61;
@@ -344,7 +344,7 @@
             // tBmaHS
             // 
             this.tBmaHS.Location = new System.Drawing.Point(169, 146);
-            this.tBmaHS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBmaHS.Margin = new System.Windows.Forms.Padding(4);
             this.tBmaHS.Name = "tBmaHS";
             this.tBmaHS.Size = new System.Drawing.Size(283, 22);
             this.tBmaHS.TabIndex = 52;
@@ -352,7 +352,7 @@
             // tBID
             // 
             this.tBID.Location = new System.Drawing.Point(169, 114);
-            this.tBID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBID.Margin = new System.Windows.Forms.Padding(4);
             this.tBID.Name = "tBID";
             this.tBID.Size = new System.Drawing.Size(283, 22);
             this.tBID.TabIndex = 51;
@@ -360,7 +360,7 @@
             // tBName
             // 
             this.tBName.Location = new System.Drawing.Point(169, 82);
-            this.tBName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBName.Margin = new System.Windows.Forms.Padding(4);
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(283, 22);
             this.tBName.TabIndex = 50;
@@ -368,7 +368,7 @@
             // tBNienKhoa
             // 
             this.tBNienKhoa.Location = new System.Drawing.Point(169, 177);
-            this.tBNienKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBNienKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.tBNienKhoa.Name = "tBNienKhoa";
             this.tBNienKhoa.Size = new System.Drawing.Size(283, 22);
             this.tBNienKhoa.TabIndex = 79;
@@ -376,7 +376,7 @@
             // tBPH
             // 
             this.tBPH.Location = new System.Drawing.Point(169, 265);
-            this.tBPH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBPH.Margin = new System.Windows.Forms.Padding(4);
             this.tBPH.Name = "tBPH";
             this.tBPH.Size = new System.Drawing.Size(283, 22);
             this.tBPH.TabIndex = 80;
@@ -394,7 +394,7 @@
             // tBHocPhi
             // 
             this.tBHocPhi.Location = new System.Drawing.Point(637, 208);
-            this.tBHocPhi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBHocPhi.Margin = new System.Windows.Forms.Padding(4);
             this.tBHocPhi.Name = "tBHocPhi";
             this.tBHocPhi.Size = new System.Drawing.Size(283, 22);
             this.tBHocPhi.TabIndex = 82;
@@ -402,7 +402,7 @@
             // tBClass
             // 
             this.tBClass.Location = new System.Drawing.Point(637, 238);
-            this.tBClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBClass.Margin = new System.Windows.Forms.Padding(4);
             this.tBClass.Name = "tBClass";
             this.tBClass.Size = new System.Drawing.Size(283, 22);
             this.tBClass.TabIndex = 83;
@@ -420,7 +420,7 @@
             // tBHocKy
             // 
             this.tBHocKy.Location = new System.Drawing.Point(637, 270);
-            this.tBHocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBHocKy.Margin = new System.Windows.Forms.Padding(4);
             this.tBHocKy.Name = "tBHocKy";
             this.tBHocKy.Size = new System.Drawing.Size(283, 22);
             this.tBHocKy.TabIndex = 85;
@@ -458,7 +458,7 @@
             // tBDiemTB
             // 
             this.tBDiemTB.Location = new System.Drawing.Point(637, 300);
-            this.tBDiemTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBDiemTB.Margin = new System.Windows.Forms.Padding(4);
             this.tBDiemTB.Name = "tBDiemTB";
             this.tBDiemTB.Size = new System.Drawing.Size(283, 22);
             this.tBDiemTB.TabIndex = 90;
@@ -473,7 +473,7 @@
             "Khá",
             "Trung Bình"});
             this.cBHL.Location = new System.Drawing.Point(169, 293);
-            this.cBHL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBHL.Margin = new System.Windows.Forms.Padding(4);
             this.cBHL.Name = "cBHL";
             this.cBHL.Size = new System.Drawing.Size(283, 24);
             this.cBHL.Sorted = true;
@@ -491,7 +491,7 @@
             "Trung Bình",
             "Yếu"});
             this.cBHanhKiem.Location = new System.Drawing.Point(169, 324);
-            this.cBHanhKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBHanhKiem.Margin = new System.Windows.Forms.Padding(4);
             this.cBHanhKiem.Name = "cBHanhKiem";
             this.cBHanhKiem.Size = new System.Drawing.Size(283, 24);
             this.cBHanhKiem.Sorted = true;
@@ -545,7 +545,9 @@
             this.Controls.Add(this.tBID);
             this.Controls.Add(this.tBName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QLHS";
             this.Text = "Quản lý học sinh ";
             this.Load += new System.EventHandler(this.QLHS_Load);

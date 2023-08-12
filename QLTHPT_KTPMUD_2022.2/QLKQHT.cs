@@ -21,6 +21,9 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLKQHT()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
         //Thực hiện tải lại dữ liệu lên KQHT
         private void LoadData()
