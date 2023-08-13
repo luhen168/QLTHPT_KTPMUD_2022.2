@@ -28,13 +28,18 @@ namespace QLTHPT_KTPMUD_2022._2
             this.Hide();
             mainPage.Show();
         }
-        private void QLMH_Load(object sender, EventArgs e)
-        {
-           
-            LoadData();
-        }
+        
 
-       
+        private void LoadData()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM MH";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.Fill(dataTable);
+            }
+            dgvMH.DataSource = dataTable;
+        }
         private void Find_Click(object sender, EventArgs e)
         {
             string search = tBFind.Text;
@@ -50,15 +55,13 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "BEGIN TRAN INSERT INTO MH (MaMH, TenMH) " +
-                        "VALUES (@MaMH,@TenMH) COMMIT TRAN";
+                    string query = "INSERT INTO MH (MaMH, TenMH) " +
+                        "VALUES (@MaMH,@TenMH)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.Add(new SqlParameter("@MaMH", tBID.Text));
+                        command.Parameters.Add(new SqlParameter("@MaMH", tBmaMH.Text));
                         command.Parameters.Add(new SqlParameter("@TenMH", tBName.Text));
-                        //command.Parameters.Add(new SqlParameter("@GioiTinh", cBSex.Text));
-
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -84,18 +87,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private void ClearData()
         {
             tBName.Text = "";
-            tBID.Text = "";
-            tBFind.Text = "";
-        }
-        private void LoadData()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM MH";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                adapter.Fill(dataTable);
-            }
-            dgvMH.DataSource = dataTable;
+            tBmaMH.Text = "";
         }
         private void Delete_Click(object sender, EventArgs e)
         {
@@ -108,7 +100,8 @@ namespace QLTHPT_KTPMUD_2022._2
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.Add(new SqlParameter("@MaMH", tBID.Text));
+                        command.Parameters.Add(new SqlParameter("@MaMH", tBmaMH.Text));
+                        command.Parameters.Add(new SqlParameter("@TenMH", tBName.Text));
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -136,7 +129,7 @@ namespace QLTHPT_KTPMUD_2022._2
         private void dgvMH_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             tBName.Text = dgvMH.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tBID.Text = dgvMH.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tBmaMH.Text = dgvMH.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
         private void Update_Click(object sender, EventArgs e)
         {
@@ -150,7 +143,7 @@ namespace QLTHPT_KTPMUD_2022._2
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
-                        command.Parameters.Add(new SqlParameter("@MaMH", tBID.Text));
+                        command.Parameters.Add(new SqlParameter("@MaMH", tBmaMH.Text));
                         command.Parameters.Add(new SqlParameter("@TenMH", tBName.Text));
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -176,5 +169,29 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
+        private void dgvMH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tBName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBFind_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBmaMH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QLMH_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
