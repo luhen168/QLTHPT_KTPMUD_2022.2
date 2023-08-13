@@ -83,6 +83,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuQLTK.Name = "menuQLTK";
             this.menuQLTK.Size = new System.Drawing.Size(139, 24);
             this.menuQLTK.Text = "Quản lý Tài khoản";
+            this.menuQLTK.Click += new System.EventHandler(this.menuQLTK_Click);
             // 
             // menuStrip1
             // 
@@ -123,6 +124,13 @@ namespace QLTHPT_KTPMUD_2022._2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLTHPT_KTPMUD_2022._2.Properties.Resources.background_inside;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1505, 570);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.ClientSize = new System.Drawing.Size(1163, 570);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

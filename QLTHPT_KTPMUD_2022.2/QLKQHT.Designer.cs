@@ -196,7 +196,6 @@
             this.dgvKQHT.RowHeadersWidth = 51;
             this.dgvKQHT.Size = new System.Drawing.Size(1067, 288);
             this.dgvKQHT.TabIndex = 114;
-            this.dgvKQHT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKQHT_CellContentClick);
             this.dgvKQHT.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKQHT_RowHeaderMouseClick);
             // 
             // btnDelKQ

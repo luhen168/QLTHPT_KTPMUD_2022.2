@@ -95,5 +95,28 @@ namespace QLTHPT_KTPMUD_2022._2
                 this.textBox1.Text = openFileDialog1.FileName;
             }
         }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = this.textBox1.Text;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
     }
 }

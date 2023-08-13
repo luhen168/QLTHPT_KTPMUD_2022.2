@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLMH));
             this.dgvMH = new System.Windows.Forms.DataGridView();
-            this.Back = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tBFind = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.tBName = new System.Windows.Forms.TextBox();
-            this.tBID = new System.Windows.Forms.TextBox();
+            this.tBmaMH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMH)).BeginInit();
@@ -53,22 +53,23 @@
             this.dgvMH.RowTemplate.Height = 24;
             this.dgvMH.Size = new System.Drawing.Size(452, 277);
             this.dgvMH.TabIndex = 0;
+            this.dgvMH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMH_CellContentClick);
             this.dgvMH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMH_RowHeaderMouseClick);
             // 
-            // Back
+            // btnBack
             // 
-            this.Back.Location = new System.Drawing.Point(9, 10);
-            this.Back.Margin = new System.Windows.Forms.Padding(2);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(108, 42);
-            this.Back.TabIndex = 1;
-            this.Back.Text = "Quay lại";
-            this.Back.UseVisualStyleBackColor = true;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.btnBack.Location = new System.Drawing.Point(9, 10);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(108, 42);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.Back_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(678, 107);
+            this.btnAdd.Location = new System.Drawing.Point(678, 72);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(115, 43);
@@ -79,7 +80,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(678, 154);
+            this.btnUpdate.Location = new System.Drawing.Point(678, 132);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 43);
@@ -90,7 +91,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(678, 206);
+            this.btnDelete.Location = new System.Drawing.Point(678, 198);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(115, 43);
@@ -101,15 +102,16 @@
             // 
             // tBFind
             // 
-            this.tBFind.Location = new System.Drawing.Point(192, 17);
+            this.tBFind.Location = new System.Drawing.Point(192, 27);
             this.tBFind.Margin = new System.Windows.Forms.Padding(2);
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(601, 22);
             this.tBFind.TabIndex = 5;
+            this.tBFind.TextChanged += new System.EventHandler(this.tBFind_TextChanged);
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(678, 62);
+            this.btnFind.Location = new System.Drawing.Point(825, 17);
             this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(115, 43);
@@ -125,14 +127,16 @@
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(452, 22);
             this.tBName.TabIndex = 7;
+            this.tBName.TextChanged += new System.EventHandler(this.tBName_TextChanged);
             // 
-            // tBID
+            // tBmaMH
             // 
-            this.tBID.Location = new System.Drawing.Point(192, 132);
-            this.tBID.Margin = new System.Windows.Forms.Padding(2);
-            this.tBID.Name = "tBID";
-            this.tBID.Size = new System.Drawing.Size(452, 22);
-            this.tBID.TabIndex = 8;
+            this.tBmaMH.Location = new System.Drawing.Point(192, 132);
+            this.tBmaMH.Margin = new System.Windows.Forms.Padding(2);
+            this.tBmaMH.Name = "tBmaMH";
+            this.tBmaMH.Size = new System.Drawing.Size(452, 22);
+            this.tBmaMH.TabIndex = 8;
+            this.tBmaMH.TextChanged += new System.EventHandler(this.tBmaMH_TextChanged);
             // 
             // label1
             // 
@@ -160,17 +164,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 497);
+            this.ClientSize = new System.Drawing.Size(963, 497);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tBID);
+            this.Controls.Add(this.tBmaMH);
             this.Controls.Add(this.tBName);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.tBFind);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvMH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -178,6 +182,7 @@
             this.MinimizeBox = false;
             this.Name = "QLMH";
             this.Text = "Quản lý Môn học ";
+            this.Load += new System.EventHandler(this.QLMH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,14 +192,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMH;
-        private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox tBFind;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.TextBox tBName;
-        private System.Windows.Forms.TextBox tBID;
+        private System.Windows.Forms.TextBox tBmaMH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 

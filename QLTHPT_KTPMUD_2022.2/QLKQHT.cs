@@ -30,7 +30,9 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT ND.MaID, ND.HoVaTen, NDHS.HanhKiem, NDHS.TenLop, NDHS.XepLoaiHL, NDHS.DiemTBHK, Hoc.* FROM ((NDHS INNER JOIN Hoc ON NDHS.MaHS = Hoc.MaHS AND NDHS.HocKy = Hoc.HocKy) INNER JOIN ND ON NDHS.MaID = ND.MaID)";
+                string query = "SELECT ND.MaID, ND.HoVaTen, Co.LoaiHK, NDHS.TenLop, NDHS.XepLoaiHL, NDHS.DiemTBHK, Hoc.*" +
+                               "FROM(((NDHS INNER JOIN Hoc ON NDHS.MaHS = Hoc.MaHS AND NDHS.HocKy = Hoc.HocKy)" +
+                               "INNER JOIN Co ON NDHS.MaHS = Co.MaHS AND NDHS.HocKy = Co.HocKy) INNER JOIN ND ON NDHS.MaID = ND.MaID)";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 adapter.Fill(dataTable);
             }
@@ -86,12 +88,19 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Hoc (MaHS, MaMH, Diem15p, Diem1Tiet, DiemThi, DiemTBMH, HocKy) VALUES (@MaHS, @MaMH, @Diem15p, @Diem1Tiet, @DiemThi, @DiemTBMH, @HK)";
+                    string query = "BEGIN TRAN INSERT INTO Hoc (MaHS, MaMH, Diem15p, Diem1Tiet, DiemThi, DiemTBMH, HocKy)" +
+                                   "VALUES (@MaHS, @MaMH, @Diem15p, @Diem1Tiet, @DiemThi, @DiemTBMH, @HK);" +
+                                   "INSERT INTO Co (MaHS, LoaiHK, HocKy) VALUES (@MaHS, @LoaiHK, @HK);" +
+                                   "UPDATE NDHS SET HanhKiem = Co.LoaiHK FROM NDHS INNER JOIN Co ON NDHS.MaHS = Co.MaHS AND NDHS.HocKy = Co.HocKy;" +
+                                   "UPDATE NDHS SET XepLoaiHL = CASE WHEN DiemTBHK >= 8 AND HanhKiem = 'Tốt' THEN 'Giỏi'" +
+                                   "WHEN (DiemTBHK >= 5 AND DiemTBHK < 8) AND HanhKiem = 'Khá' THEN 'Khá'" +
+                                   "WHEN DiemTBHK < 5 AND (HanhKiem = 'Trung Bình' OR HanhKiem = 'Yếu' OR HanhKiem = 'Kém') THEN 'Trung Bình'" +
+                                   "ELSE NULL END COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
-                        command.Parameters.Add(new SqlParameter("@HanhKiem", cBHanhKiem.Text));
+                        command.Parameters.Add(new SqlParameter("@LoaiHK", cBHanhKiem.Text));
                         command.Parameters.Add(new SqlParameter("@TenLop", tBClass.Text));
                         command.Parameters.Add(new SqlParameter("@XepLoaiHL", cBHL.Text));
                         command.Parameters.Add(new SqlParameter("@DiemTBHK", tBDiemTBHK.Text));
@@ -132,12 +141,19 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Hoc SET Diem15p = @Diem15p, Diem1Tiet = @Diem1Tiet, DiemThi = @DiemThi, DiemTBMH = @DiemTBMH WHERE MaHS = @MaHS AND MaMH = @MaMH AND HocKy = @HK";
+                    string query = "BEGIN TRAN UPDATE Hoc SET Diem15p = @Diem15p, Diem1Tiet = @Diem1Tiet, DiemThi = @DiemThi, DiemTBMH = @DiemTBMH " +
+                                   "WHERE MaHS = @MaHS AND MaMH = @MaMH AND HocKy = @HK;" +
+                                   "UPDATE Co SET LoaiHK = @LoaiHK WHERE MaHS = @MaHS AND HocKy = @HK;" +
+                                   "UPDATE NDHS SET HanhKiem = Co.LoaiHK FROM NDHS INNER JOIN Co ON NDHS.MaHS = Co.MaHS AND NDHS.HocKy = Co.HocKy;" +
+                                   "UPDATE NDHS SET XepLoaiHL = CASE WHEN DiemTBHK >= 8 AND HanhKiem = 'Tốt' THEN 'Giỏi'" +
+                                   "WHEN (DiemTBHK >= 5 AND DiemTBHK < 8) AND HanhKiem = 'Khá' THEN 'Khá'" +
+                                   "WHEN DiemTBHK < 5 AND (HanhKiem = 'Trung Bình' OR HanhKiem = 'Yếu' OR HanhKiem = 'Kém') THEN 'Trung Bình'" +
+                                   "ELSE NULL END COMMIT TRAN";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
-                        command.Parameters.Add(new SqlParameter("@HanhKiem", cBHanhKiem.Text));
+                        command.Parameters.Add(new SqlParameter("@LoaiHK", cBHanhKiem.Text));
                         command.Parameters.Add(new SqlParameter("@TenLop", tBClass.Text));
                         command.Parameters.Add(new SqlParameter("@XepLoaiHL", cBHL.Text));
                         command.Parameters.Add(new SqlParameter("@DiemTBHK", tBDiemTBHK.Text));
@@ -179,12 +195,14 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM Hoc WHERE MaHS = @MaHS AND MaMH = @MaMH AND HocKy = @HK";
+                    string query = "DELETE FROM Hoc WHERE MaHS = @MaHS AND MaMH = @MaMH AND HocKy = @HK;" +
+                                   "DELETE FROM Co WHERE MaHS = @MaHS AND HocKy = @HK;" +
+                                   "UPDATE NDHS SET XepLoaiHL = NULL, HanhKiem = NULL, DiemTBHK = 0";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));
                         command.Parameters.Add(new SqlParameter("@MaID", tBID.Text));
-                        command.Parameters.Add(new SqlParameter("@HanhKiem", cBHanhKiem.Text));
+                        command.Parameters.Add(new SqlParameter("@LoaiHK", cBHanhKiem.Text));
                         command.Parameters.Add(new SqlParameter("@TenLop", tBClass.Text));
                         command.Parameters.Add(new SqlParameter("@XepLoaiHL", cBHL.Text));
                         command.Parameters.Add(new SqlParameter("@DiemTBHK", tBDiemTBHK.Text));
@@ -219,11 +237,6 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
-        private void dgvKQHT_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void QLKQHT_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -233,7 +246,7 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             string search = tBFind.Text;
             DataView dv = new DataView(dataTable);
-            dv.RowFilter = $"HoVaTen like '%{search}%' or MaHS like '%{search}%' or MaID like '%{search}%' or MaMH like '%{search}%' or HanhKiem like '%{search}%'  or TenLop like '%{search}%' or XepLoaiHL like '%{search}%' or HocKy like '%{search}%' ";
+            dv.RowFilter = $"HoVaTen like '%{search}%' or MaHS like '%{search}%' or MaID like '%{search}%' or MaMH like '%{search}%' or LoaiHK like '%{search}%'  or TenLop like '%{search}%' or XepLoaiHL like '%{search}%' or HocKy like '%{search}%' ";
             dgvKQHT.DataSource = dv;
         }
     }
