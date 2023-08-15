@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLTK));
             this.tBmaTK = new System.Windows.Forms.TextBox();
             this.tBID = new System.Windows.Forms.TextBox();
             this.tBmaQL = new System.Windows.Forms.TextBox();
@@ -262,8 +263,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QLTK";
-            this.Text = "Form5";
+            this.Text = "Quản lý tài khoản";
             this.Load += new System.EventHandler(this.QLTK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).EndInit();
             this.ResumeLayout(false);

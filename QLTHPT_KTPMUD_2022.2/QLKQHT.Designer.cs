@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLKQHT));
             this.cBHL = new System.Windows.Forms.ComboBox();
             this.tBDiemTBHK = new System.Windows.Forms.TextBox();
             this.tBDiem1Tiet = new System.Windows.Forms.TextBox();
@@ -432,6 +433,7 @@
             this.Controls.Add(this.tBHocKy);
             this.Controls.Add(this.tBID);
             this.Controls.Add(this.tBName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "QLKQHT";
