@@ -50,7 +50,7 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLGV()
         {
             InitializeComponent();
-            //comment;gg
+            //comment;gghelllo
         }
 
         private void QLGV_Load(object sender, EventArgs e)
