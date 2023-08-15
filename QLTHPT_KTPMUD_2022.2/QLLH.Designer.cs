@@ -184,6 +184,7 @@
             this.dgvLH.RowHeadersWidth = 51;
             this.dgvLH.Size = new System.Drawing.Size(561, 263);
             this.dgvLH.TabIndex = 78;
+            this.dgvLH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLH_RowHeaderMouseClick);
             // 
             // QLLH
             // 
