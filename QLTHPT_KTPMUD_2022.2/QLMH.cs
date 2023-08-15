@@ -22,19 +22,20 @@ namespace QLTHPT_KTPMUD_2022._2
         }
        
 
-        //Thực hiện chức năng quay lại 
+        //Nút quay lại trang chủ
         private void Back_Click(object sender, EventArgs e)
         {
             this.Hide();
             mainPage.Show();
         }
 
-        
-        //Sự kiện tải dữ liệu
+       
+        // hàm thực hiện load data từ sql vào dataGridview
         private void QLMH_Load(object sender, EventArgs e)  
         {
             LoadData();
         }
+
         private void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString)) //Mở kết nối với SQL Server, tạo 1 đối tượng kết nối tới chuỗi 
@@ -45,7 +46,6 @@ namespace QLTHPT_KTPMUD_2022._2
             }
             dgvMH.DataSource = dataTable;                                       //dataGridView nhận dữ liệu từ đối tượng dataTable
         }
-
 
         //Đặt lại về rỗng 
         private void ClearData()
@@ -75,22 +75,22 @@ namespace QLTHPT_KTPMUD_2022._2
                 {
                     connection.Open();
                     string query = "INSERT INTO MH (MaMH, TenMH) " +
-                        "VALUES (@MaMH,@TenMH)";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                        "VALUES (@MaMH,@TenMH)";  // chuỗi truy vần sql để thêm dữ liệu vào bảng
+                    using (SqlCommand command = new SqlCommand(query, connection))  // tạo đối tượng thuộc lớp SqlCommand đê thực hiện truy vấn
                     {
-
+                        // lấy các giá trị từ textbox để thực hiện truy vấn
                         command.Parameters.Add(new SqlParameter("@MaMH", tBmaMH.Text));
                         command.Parameters.Add(new SqlParameter("@TenMH", tBName.Text));
-                        int rowsAffected = command.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        int rowsAffected = command.ExecuteNonQuery();  // tạo biến rowAffected, kết quả trả về là số dòng bị thay đổi trong cơ sở dữ liệu
+                        if (rowsAffected > 0)  // nếu có hàng bị ảnh hưởng
                         {
                             MessageBox.Show("Thêm dữ liệu thành công!");
                             // Sau khi THÊM thành công
-                            dataTable.Clear();
-                            LoadData();
-                            ClearData();
+                            dataTable.Clear();   //thực hiện xóa dữ liệu cũ trên dataGridview
+                            LoadData();    // tải lại và cập nhật dữ liệu mới trên dataGridview
+                            ClearData();  // thực hiện xóa dữ liệu trên các textbox 
                         }
-                        else
+                        else  // không có hàng bị ảnh hưởng
                         {
                             MessageBox.Show("Không thể thêm dữ liệu!");
                             ClearData();
@@ -98,17 +98,24 @@ namespace QLTHPT_KTPMUD_2022._2
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) // thực hiện bắt các lỗi, ngoại lệ (exception) trong khối try khi truy vấn, nếu có lỗi sẽ chương trình sẽ chạy khối cacth
             {
-                MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);
+                MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);  // thực hiện hiển thị lỗi mà biến 'ex' chứa
             }
         }
 
+        private void ClearData()  // hàm thực hiện xóa dữ liệu trên các textbox
+        {
+            // gán giá trị null có các textbox
+            tBName.Text = "";
+            tBmaMH.Text = "";
+        }
+        
 
         //Thực hiện thao tác xóa dữ liệu một môn học 
         private void Delete_Click(object sender, EventArgs e)
         {
-            try
+            try 
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -143,12 +150,17 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
+
+        // hàm thực hiện xử lý sự kiện lấy vị trí hàng được nhấp chuột trên dataGridview
         private void dgvMH_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
         {
-            tBName.Text = dgvMH.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tBmaMH.Text = dgvMH.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tBName.Text = dgvMH.Rows[e.RowIndex].Cells[1].Value.ToString();  // gán giá trị của ô tại cột 1 của hàng đã chọn vào textbox
+            tBmaMH.Text = dgvMH.Rows[e.RowIndex].Cells[0].Value.ToString();  // gán giá trị của ô tại cột 0 của hàng đã chọn vào textbox
         }
 
+
+        // hàm thực hiện sửa dữ liệu
         private void Update_Click(object sender, EventArgs e)
         {
             try
@@ -186,6 +198,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 ClearData();
             }
         }
+
 
         private void dgvMH_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

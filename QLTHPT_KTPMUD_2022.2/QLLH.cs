@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 namespace QLTHPT_KTPMUD_2022._2
@@ -15,7 +16,8 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM LOP";
+                string query = "SELECT * FROM LOP;" +
+                               "UPDATE Lop SET SiSo = (SELECT COUNT(TenLop) FROM NDHS WHERE NDHS.TenLop = Lop.TenLop)";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 adapter.Fill(dataTable);
             }
@@ -65,8 +67,9 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Lop (TenLop, ViTri, SiSo)" +
-                        "VALUES (@TenLop, @ViTri, @SiSo) ";
+                    string query = "INSERT INTO Lop (TenLop, ViTri)" +
+                                   "VALUES (@TenLop, @ViTri);" +
+                                   "UPDATE Lop SET SiSo = (SELECT COUNT(TenLop) FROM NDHS WHERE NDHS.TenLop = Lop.TenLop)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -108,7 +111,8 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = " UPDATE Lop SET TenLop = @TenLop,ViTri = @ViTri,SiSo = @SiSo,";
+                    string query = "UPDATE Lop SET TenLop = @TenLop, ViTri = @ViTri" +
+                                   "UPDATE Lop SET SiSo = (SELECT COUNT(TenLop) FROM NDHS WHERE NDHS.TenLop = Lop.TenLop)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
@@ -175,6 +179,13 @@ namespace QLTHPT_KTPMUD_2022._2
                 MessageBox.Show("Lỗi khi Xóa dữ liệu: " + ex.Message);
                 ClearData();
             }
+        }
+
+        private void dgvLH_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tBTenLop.Text = dgvLH.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tBViTri.Text = dgvLH.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tBSiSo.Text = dgvLH.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
     }
 }

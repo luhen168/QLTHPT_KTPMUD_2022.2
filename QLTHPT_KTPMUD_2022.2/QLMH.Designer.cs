@@ -53,7 +53,6 @@
             this.dgvMH.RowTemplate.Height = 24;
             this.dgvMH.Size = new System.Drawing.Size(452, 277);
             this.dgvMH.TabIndex = 0;
-            this.dgvMH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMH_CellContentClick);
             this.dgvMH.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMH_RowHeaderMouseClick);
             // 
             // btnBack
@@ -107,7 +106,6 @@
             this.tBFind.Name = "tBFind";
             this.tBFind.Size = new System.Drawing.Size(601, 22);
             this.tBFind.TabIndex = 5;
-            this.tBFind.TextChanged += new System.EventHandler(this.tBFind_TextChanged);
             // 
             // btnFind
             // 
@@ -127,7 +125,6 @@
             this.tBName.Name = "tBName";
             this.tBName.Size = new System.Drawing.Size(452, 22);
             this.tBName.TabIndex = 7;
-            this.tBName.TextChanged += new System.EventHandler(this.tBName_TextChanged);
             // 
             // tBmaMH
             // 
@@ -136,7 +133,6 @@
             this.tBmaMH.Name = "tBmaMH";
             this.tBmaMH.Size = new System.Drawing.Size(452, 22);
             this.tBmaMH.TabIndex = 8;
-            this.tBmaMH.TextChanged += new System.EventHandler(this.tBmaMH_TextChanged);
             // 
             // label1
             // 
