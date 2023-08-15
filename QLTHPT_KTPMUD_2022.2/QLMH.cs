@@ -142,7 +142,7 @@ namespace QLTHPT_KTPMUD_2022._2
             tBmaMH.Text = dgvMH.Rows[e.RowIndex].Cells[0].Value.ToString();  // gán giá trị của ô tại cột 0 của hàng đã chọn vào textbox
         }
 
-        // hàm thực hiện sửa dữ liệu
+        // hàm thực hiện sửa dữ liệu.
         private void Update_Click(object sender, EventArgs e)
         {
             try
@@ -180,7 +180,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 ClearData();
             }
         }
-
+        
         private void QLMH_Load(object sender, EventArgs e)
         {
             LoadData(); 
