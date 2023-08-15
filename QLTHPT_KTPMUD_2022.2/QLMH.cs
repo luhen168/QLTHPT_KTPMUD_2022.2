@@ -29,6 +29,7 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLMH()
         {
             InitializeComponent();
+            //comment;cchellllllo
         }
 
         private void Back_Click(object sender, EventArgs e)
