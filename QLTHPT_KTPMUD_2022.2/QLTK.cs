@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
+
 
 namespace QLTHPT_KTPMUD_2022._2
 {
@@ -20,6 +14,9 @@ namespace QLTHPT_KTPMUD_2022._2
         public QLTK()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Width = 1024;   // Thiết lập chiều rộng
+            this.Height = 768;  // Thiết lập chiều cao
         }
 
         //Thực hiện tải lại dữ liệu lên TK
