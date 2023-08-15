@@ -103,13 +103,6 @@ namespace QLTHPT_KTPMUD_2022._2
                 MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message);  // thực hiện hiển thị lỗi mà biến 'ex' chứa
             }
         }
-
-        private void ClearData()  // hàm thực hiện xóa dữ liệu trên các textbox
-        {
-            // gán giá trị null có các textbox
-            tBName.Text = "";
-            tBmaMH.Text = "";
-        }
         
 
         //Thực hiện thao tác xóa dữ liệu một môn học 
