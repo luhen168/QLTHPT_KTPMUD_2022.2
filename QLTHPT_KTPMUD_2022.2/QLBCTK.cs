@@ -12,6 +12,8 @@ namespace QLTHPT_KTPMUD_2022._2
 {
     public partial class QLBCTK : Form
     {
+        private MainPage mainPage = new MainPage(); //Tạo 1 đối tượng trang chủ thừa kế các method hoặc thuộc tính của lớp
+
         public QLBCTK()
         {
             InitializeComponent();
@@ -23,6 +25,22 @@ namespace QLTHPT_KTPMUD_2022._2
         private void QLBCTK_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainPage.Show();
         }
     }
 }

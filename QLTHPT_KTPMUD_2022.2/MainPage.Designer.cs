@@ -63,6 +63,7 @@ namespace QLTHPT_KTPMUD_2022._2
             this.menuQLBCTK.Name = "menuQLBCTK";
             this.menuQLBCTK.Size = new System.Drawing.Size(193, 24);
             this.menuQLBCTK.Text = "Quản lý Báo cáo thống kê";
+            this.menuQLBCTK.Click += new System.EventHandler(this.menuQLBCTK_Click);
             // 
             // menuQLMH
             // 

@@ -39,6 +39,7 @@ namespace QLTHPT_KTPMUD_2022._2
 
         }
 
+        // Quản lí kết quả học tập
         private void menuQLKQHT_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -46,6 +47,7 @@ namespace QLTHPT_KTPMUD_2022._2
             qlkqht.Show();
         }
 
+        //Quản lí giáo viên 
         private void menuQLGV_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -53,6 +55,7 @@ namespace QLTHPT_KTPMUD_2022._2
             qlgv.Show();
         }
 
+        //Quản lý học sinh 
         private void menuQLHS_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -60,6 +63,7 @@ namespace QLTHPT_KTPMUD_2022._2
             qlhs.Show();
         }
 
+        //Quản lý lớp học 
         private void menuQLLH_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -67,6 +71,7 @@ namespace QLTHPT_KTPMUD_2022._2
             qllh.Show();
         }
 
+        //Quản lý môn học
         private void menuQLMH_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -87,17 +92,20 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
+        //Quản lý tài khoản
         private void menuQLTK_Click(object sender, EventArgs e)
         {
             this.Hide();
             qltk = new QLTK();
             qltk.Show();
+        }
+
+        //Quản lý báo cáo thống kê
+        private void menuQLBCTK_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            qlbctk = new QLBCTK();
+            qlbctk.Show();
         }
     }
 }
