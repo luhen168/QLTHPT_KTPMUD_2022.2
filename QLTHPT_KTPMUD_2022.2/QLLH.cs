@@ -111,7 +111,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Lop SET TenLop = @TenLop, ViTri = @ViTri" +
+                    string query = "UPDATE Lop SET TenLop = @TenLop, ViTri = @ViTri WHERE TenLop = @TenLop;" +
                                    "UPDATE Lop SET SiSo = (SELECT COUNT(TenLop) FROM NDHS WHERE NDHS.TenLop = Lop.TenLop)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
