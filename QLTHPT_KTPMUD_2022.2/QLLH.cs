@@ -111,7 +111,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE Lop SET TenLop = @TenLop, ViTri = @ViTri" +
+                    string query = "UPDATE Lop SET TenLop = @TenLop, ViTri = @ViTri WHERE TenLop = @TenLop;" +
                                    "UPDATE Lop SET SiSo = (SELECT COUNT(TenLop) FROM NDHS WHERE NDHS.TenLop = Lop.TenLop)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -150,7 +150,8 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM Lop WHERE TenLop = @TenLop, ViTri = @ViTri, SiSo = @SiSo";
+                    string query = "DELETE FROM Thuoc WHERE TenLop = @TenLop DELETE FROM DayLop WHERE TenLop = @TenLop" +
+                                   "DELETE FROM ChuNhiem WHERE TenLop = @TenLop DELETE FROM Lop WHERE TenLop = @TenLop";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 
