@@ -56,7 +56,7 @@ namespace QLTHPT_KTPMUD_2022._2
         {
             string search = tBFind1.Text;
             DataView dv = new DataView(dataTable);
-            dv.RowFilter = $"TenLop like '%{search}%' or ViTri like '%{search}%' or SiSo like '%{search}%' ";
+            dv.RowFilter = $"TenLop like '%{search}%' or ViTri like '%{search}%' ";
             dgvLH.DataSource = dv;
         }
 
@@ -143,6 +143,7 @@ namespace QLTHPT_KTPMUD_2022._2
             }
         }
 
+
         private void btnDelLH_Click(object sender, EventArgs e)
         {
             try
@@ -150,7 +151,9 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM Lop WHERE TenLop = @TenLop, ViTri = @ViTri, SiSo = @SiSo";
+                    string query = "\"DELETE FROM Thuoc WHERE TenLop = @TenLop " +
+                        "DELETE FROM DayLop WHERE TenLop = @TenLop;\" +\r\n " +
+                        "\"DELETE FROM ChuNhiem WHERE TenLop = @TenLop DELETE FROM Lop WHERE TenLop = @TenLop\"";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
 

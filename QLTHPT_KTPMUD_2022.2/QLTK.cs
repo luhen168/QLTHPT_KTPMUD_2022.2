@@ -128,7 +128,8 @@ namespace QLTHPT_KTPMUD_2022._2
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "UPDATE TK SET TenND = @TenND, MatKhau = @MatKhau, MaQL = @MaQL WHERE MaTK = @MaTK AND MaID = @MaID";
+                    string query = "UPDATE TK SET TenND = @TenND, MatKhau = @MatKhau, MaQL = @MaQL WHERE MaTK = @MaTK AND MaID = @MaID;" +
+                                   "UPDATE ND SET HoVaTen = @HoVaTen WHERE MaID = @MaID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.Add(new SqlParameter("@HoVaTen", tBName.Text));

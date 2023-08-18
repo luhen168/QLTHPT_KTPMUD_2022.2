@@ -104,6 +104,7 @@ namespace QLTHPT_KTPMUD_2022._2
                 tBdateGV.Format = DateTimePickerFormat.Custom;
                 tBdateGV.Text = dgvGV.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
+
             //Đối với ngày kết thúc
             if (string.IsNullOrEmpty(dgvGV.Rows[e.RowIndex].Cells[10].Value.ToString()))
             {
